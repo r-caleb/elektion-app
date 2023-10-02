@@ -100,8 +100,8 @@ export default function Header() {
                 <div
                   className={
                     pathname === "/"
-                      ? "active flex p-3"
-                      : "flex p-2 hover:bg-[#393939]"
+                      ? "active flex p-2 lg:px-4"
+                      : "flex p-2 lg:px-4 hover:bg-[#393939]"
                   }
                 >
                   <span
@@ -119,8 +119,8 @@ export default function Header() {
                 <div
                   className={
                     pathname === "/news"
-                      ? "active flex p-2"
-                      : "flex p-2 hover:bg-[#393939]"
+                      ? "active flex p-2 lg:px-4"
+                      : "flex p-2 lg:px-4 hover:bg-[#393939]"
                   }
                 >
                   <span
@@ -138,8 +138,8 @@ export default function Header() {
                 <div
                   className={
                     pathname === "/candidat"
-                      ? "active flex p-2"
-                      : "flex p-2 hover:bg-[#393939]"
+                      ? "active flex p-2 lg:px-4"
+                      : "flex p-2 lg:px-4 hover:bg-[#393939]"
                   }
                 >
                   <span
@@ -157,8 +157,8 @@ export default function Header() {
                 <div
                   className={
                     pathname === "/parti"
-                      ? "active flex p-2"
-                      : "flex p-2 hover:bg-[#393939]"
+                      ? "active flex p-2 lg:px-4"
+                      : "flex p-2 lg:px-4 hover:bg-[#393939]"
                   }
                 >
                   <span
@@ -176,8 +176,8 @@ export default function Header() {
                 <div
                   className={
                     pathname === "/province"
-                      ? "active flex p-2"
-                      : "flex p-2 hover:bg-[#393939]"
+                      ? "active flex p-2 lg:px-4"
+                      : "flex p-2 lg:px-4 hover:bg-[#393939]"
                   }
                 >
                   <span
@@ -195,8 +195,8 @@ export default function Header() {
                 <div
                   className={
                     pathname === "/legal-text"
-                      ? "active flex p-2"
-                      : "flex p-2 hover:bg-[#393939]"
+                      ? "active flex p-2 lg:px-4"
+                      : "flex p-2 lg:px-4 hover:bg-[#393939]"
                   }
                 >
                   <span
@@ -214,8 +214,8 @@ export default function Header() {
                 <div
                   className={
                     pathname === "/calendar"
-                      ? "active flex p-2"
-                      : "flex p-2 hover:bg-[#393939]"
+                      ? "active flex p-2 lg:px-4"
+                      : "flex p-2 lg:px-4 hover:bg-[#393939]"
                   }
                 >
                   <span
@@ -233,8 +233,8 @@ export default function Header() {
                 <div
                   className={
                     pathname === "/contact_us"
-                      ? "active flex p-2"
-                      : "flex p-2 hover:bg-[#393939]"
+                      ? "active flex p-2 lg:px-4"
+                      : "flex p-2 lg:px-4 hover:bg-[#393939]"
                   }
                 >
                   <span
