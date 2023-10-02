@@ -11,10 +11,8 @@ export default function layout({ children }) {
     <>
       <Header handleToggleSidebar={handleToggleSidebar} />
       <SideBar sidebar={sidebar} handleToggleSidebar={handleToggleSidebar} />
-      <div className=" flex items-center justify-center ">{children}</div>
+      {children}
       <Footer />
     </>
   );
 }
-
-

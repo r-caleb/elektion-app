@@ -163,7 +163,7 @@ export default function Footer() {
                   name="subscription_email"
                   type="email"
                   placeholder="Ecrivez votre adresse email"
-                  class="py-2 px-4 md:px-5 w-full appearance-none transition duration-150 ease-in-out border text-input text-xs lg:text-sm font-body placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:outline-none focus:border-heading md:h-12 px-4 lg:px-7 h-12 lg:h-14 text-center bg-white text-black"
+                  class="py-2 px-4 md:px-5 w-full appearance-none transition duration-150 ease-in-out border text-input text-xs lg:text-sm font-body placeholder-body min-h-12  duration-200  bg-white border-gray-300 focus:outline-none focus:border-heading md:h-12  lg:px-7 h-12 lg:h-14 text-center  text-black"
                   autoComplete="off"
                   spellCheck="false"
                   aria-invalid="false"

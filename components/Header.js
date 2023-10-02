@@ -3,7 +3,13 @@
 import React from "react";
 import { PiSunHorizon } from "react-icons/pi";
 import { BsStopwatch } from "react-icons/bs";
-import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+import {
+  FaBars,
+  FaFacebook,
+  FaInstagram,
+  FaTwitter,
+  FaYoutube,
+} from "react-icons/fa";
 import logo from "/public/assets/images/logos/logo.png";
 import playstore from "/public/assets/images/googleplay.png";
 import appstore from "/public/assets/images/appstore.png";
@@ -11,20 +17,22 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function Header() {
+export default function Header({  handleToggleSidebar }) {
   const pathname = usePathname();
 
   return (
     <div className=" flex flex-col w-full gap-1 bg-white">
-     {/*  <div
-        className={`md:hidden bg-[rgba(0,0,0,0.5)]  fixed topa-0 z-[45] w-screen h-screen overlfow-hidden  `}
-      ></div> */}
-      <div className="w-full flex items-center justify-between text-xs lg:px-8 xl:px-16 max-lg:px-6 shadow-app">
+      <div className="w-full flex items-center justify-between text-xs lg:px-8 xl:px-16 max-lg:px-6 max-sm:px-3 shadow-app">
         <div className="w-full flex items-center bg-white gap-4">
-          <div className="flex items-center gap-1">
+          <FaBars
+            className="hidden max-elektion_md:block max-elektion_md:mx-2.5 cursor-pointer text-app-gray"
+            size={26}
+            onClick={() => handleToggleSidebar()}
+          />
+          <div className="flex items-center gap-1 max-md:hidden">
             <PiSunHorizon size={15} /> <span>15°C New York</span>
           </div>
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1 ">
             <BsStopwatch size={15} /> <span>Wednesday, 10 January 2021</span>{" "}
           </div>
           <span className="p-2 bg-app-blue text-white max-lg:hidden">
@@ -47,7 +55,7 @@ export default function Header() {
           </div>
         </div>
       </div>
-      <div className="w-full flex items-center justify-between bg-white max-xl:gap-4 lg:px-8 xl:px-16 max-lg:px-6 py-1">
+      <div className="w-full flex items-center max-sm:flex-col max-sm:items-start justify-between bg-white max-xl:gap-4 lg:px-8 xl:px-16 max-lg:px-6 max-sm:px-3 py-1">
         <Image
           src={logo}
           alt="logo "
@@ -61,7 +69,7 @@ export default function Header() {
               <p className="text-white font-bold  text-lg">
                 Ensemble rétablissons la confiance aux électeurs !
               </p>
-              <p className="text-white font-bold text-md py-2">
+              <p className="text-white font-bold text-elektion_md py-2">
                 La transparence du processus électoral est notre goal
               </p>
             </div>
@@ -89,27 +97,27 @@ export default function Header() {
           </div>
         </div>
       </div>
-      <div className="bg-app-gray text-white">
+      <div className="bg-app-gray text-white max-elektion_md:hidden">
         <nav
-          className={` text-white overflow-hidden w-full bg-app-gray max-md:top-0 z-[45]
+          className={` text-white overflow-hidden w-full bg-app-gray max-elektion_md:top-0 z-[45]
           `}
         >
-          <ul className="flex items-center font-[500] lg:px-8 xl:px-16 max-lg:px-6 ">
+          <ul className="flex items-center font-[500] lg:px-8 xl:px-16 max-lg:px-6 max-sm:px-3 ">
             <li>
-              <Link href="/ ">
+              <Link href="/home ">
                 <div
                   className={
-                    pathname === "/"
-                      ? "active flex p-2 lg:px-4"
-                      : "flex p-2 lg:px-4 hover:bg-[#393939]"
+                    pathname === "/home"
+                      ? "active flex p-2 lg:p-4"
+                      : "flex p-2 lg:p-4 hover:bg-[#393939]"
                   }
                 >
                   <span
                     className={`text-[14px] ${
-                      pathname === "/" ? " border-b-2 " : ""
+                      pathname === "/home" ? " border-b-2 " : ""
                     }}`}
                   >
-                    Home
+                    Accueil
                   </span>
                 </div>
               </Link>
@@ -119,8 +127,8 @@ export default function Header() {
                 <div
                   className={
                     pathname === "/news"
-                      ? "active flex p-2 lg:px-4"
-                      : "flex p-2 lg:px-4 hover:bg-[#393939]"
+                      ? "active flex p-2 lg:p-4"
+                      : "flex p-2 lg:p-4 hover:bg-[#393939]"
                   }
                 >
                   <span
@@ -138,8 +146,8 @@ export default function Header() {
                 <div
                   className={
                     pathname === "/candidat"
-                      ? "active flex p-2 lg:px-4"
-                      : "flex p-2 lg:px-4 hover:bg-[#393939]"
+                      ? "active flex p-2 lg:p-4"
+                      : "flex p-2 lg:p-4 hover:bg-[#393939]"
                   }
                 >
                   <span
@@ -157,8 +165,8 @@ export default function Header() {
                 <div
                   className={
                     pathname === "/parti"
-                      ? "active flex p-2 lg:px-4"
-                      : "flex p-2 lg:px-4 hover:bg-[#393939]"
+                      ? "active flex p-2 lg:p-4"
+                      : "flex p-2 lg:p-4 hover:bg-[#393939]"
                   }
                 >
                   <span
@@ -176,8 +184,8 @@ export default function Header() {
                 <div
                   className={
                     pathname === "/province"
-                      ? "active flex p-2 lg:px-4"
-                      : "flex p-2 lg:px-4 hover:bg-[#393939]"
+                      ? "active flex p-2 lg:p-4"
+                      : "flex p-2 lg:p-4 hover:bg-[#393939]"
                   }
                 >
                   <span
@@ -195,8 +203,8 @@ export default function Header() {
                 <div
                   className={
                     pathname === "/legal-text"
-                      ? "active flex p-2 lg:px-4"
-                      : "flex p-2 lg:px-4 hover:bg-[#393939]"
+                      ? "active flex p-2 lg:p-4"
+                      : "flex p-2 lg:p-4 hover:bg-[#393939]"
                   }
                 >
                   <span
@@ -214,8 +222,8 @@ export default function Header() {
                 <div
                   className={
                     pathname === "/calendar"
-                      ? "active flex p-2 lg:px-4"
-                      : "flex p-2 lg:px-4 hover:bg-[#393939]"
+                      ? "active flex p-2 lg:p-4"
+                      : "flex p-2 lg:p-4 hover:bg-[#393939]"
                   }
                 >
                   <span
@@ -233,8 +241,8 @@ export default function Header() {
                 <div
                   className={
                     pathname === "/contact_us"
-                      ? "active flex p-2 lg:px-4"
-                      : "flex p-2 lg:px-4 hover:bg-[#393939]"
+                      ? "active flex p-2 lg:p-4"
+                      : "flex p-2 lg:p-4 hover:bg-[#393939]"
                   }
                 >
                   <span

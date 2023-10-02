@@ -4,7 +4,9 @@ export default function Contact() {
   return (
     <section className="w-full bg-gradient-to-t from-[#E1E2E5] to-white-500 px-16">
       <div className="w-full flex items-center justify-center shadow-md bg-[#919192] rounded-lg mt-6 mb-12 ">
-        <h3 className="py-24 text-3xl text-white font-medium">Contactez-nous</h3>
+        <h3 className="py-24 text-3xl text-white font-medium">
+          Contactez-nous
+        </h3>
       </div>
       <div className="my-8 mx-auto">
         <div className="flex items-center w-full justify-center">
@@ -24,7 +26,7 @@ export default function Contact() {
               </div>
               <div className="mb-6 flex flex-col">
                 <label htmlFor="email" className="form-label">
-                 Email <span className="text-red-500">*</span>
+                  Email <span className="text-red-500">*</span>
                 </label>
                 <input
                   id="email"

@@ -20,6 +20,7 @@ module.exports = {
         home: "url('../public/assets/images/flag.jpg')",
         contact: "url('../public/assets/images/contact.jpg')",
       },
+      screens: { elektion_md: "800px" },
     },
   },
   plugins: [],
