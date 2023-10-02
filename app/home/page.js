@@ -33,7 +33,7 @@ export default function Accueil() {
     <main className="flex flex-col justify-between lg:px-8 xl:px-16 max-lg:px-6 max-sm:px-3 my-4">
       <header className="flex items-center justify-between max-sm:flex-col w-full gap-4">
         {
-          <article className="relative isolate flex flex-col justify-end overflow-hidden px-8 pb-8 pt-[350px] w-full">
+          <article className="relative isolate flex flex-col justify-end overflow-hidden px-8 pb-8 pt-[350px] max-sm:pt-[230px] w-full">
             <img
               src={`https://elektion.de-vie.com/web/assets/images/ImageArticle/${infos[0]?.image}`}
               alt="University of Southern California"
@@ -50,8 +50,8 @@ export default function Accueil() {
             </h3>
           </article>
         }
-        <div className="w-2/3 flex flex-col gap-4">
-          <article className="relative isolate flex flex-col justify-end overflow-hidden px-8 pb-8 pt-[108px] w-full">
+        <div className="w-2/3 max-sm:w-full flex flex-col gap-4">
+          <article className="relative isolate flex flex-col justify-end overflow-hidden px-8 pb-8 pt-[108px] max-sm:pt-[230px] w-full">
             <img
               src={`https://elektion.de-vie.com/web/assets/images/ImageArticle/${infos[1]?.image}`}
               alt="University of Southern California"
@@ -67,7 +67,7 @@ export default function Accueil() {
               {infos[1]?.titre}
             </h3>
           </article>
-          <article className="relative isolate flex flex-col justify-end overflow-hidden px-8 pb-8 pt-[108px] w-full">
+          <article className="relative max-sm:hidden isolate flex flex-col justify-end overflow-hidden px-8 pb-8 pt-[108px] w-full">
             <img
               src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a"
               alt="University of Southern California"
@@ -84,12 +84,12 @@ export default function Accueil() {
         </div>
       </header>
       <section className="my-8 w-full">
-        <div className="w-full ">
+        <div className="w-full">
           <h1 className="my-2 text-lg font-bold border-b border-app-blue text-app-blue">
             Calendrier électoral
           </h1>
-          <div className="flex justify-between items-center my-4 gap-24">
-            <div className="flex flex-col w-2/5 ">
+          <div className="flex justify-between max-md:flex-col items-center my-4 gap-24">
+            <div className="flex flex-col w-2/5 max-md:w-full">
               <Image
                 src={calendrier}
                 alt="logo"
@@ -105,7 +105,7 @@ export default function Accueil() {
                 commune, de secteur et de chefferie
               </h3>
             </div>
-            <div className="flex flex-col w-3/5 border-l pl-16">
+            <div className="flex flex-col w-3/5 max-md:w-full max-md:border-none max-md:pl-0 border-l pl-16">
               <div className="flex items-center gap-4 ">
                 <Image
                   src={calend}
@@ -139,7 +139,7 @@ export default function Accueil() {
                   <h3 className="text-sm">Campagne électorale</h3>
                 </div>
               </div>
-              <div className="flex items-center gap-4 ">
+              <div className="flex items-center gap-4">
                 <Image
                   src={calend}
                   alt="logo"
@@ -225,11 +225,11 @@ export default function Accueil() {
             </div>
           </div>
         </div>
-        <div className="bg-contact bg-cover bg-top h-[400px] my-8">
+        <div className="bg-contact bg-cover bg-top h-[400px] max-sm:h-[500px] my-8">
           <div className="py-5 mt-5">
             <div className="flex items-center">
               <div className="flex items-center">
-                <div className=" flex flex-col pl-24 pr-96 mr-16 gap-8 pt-16">
+                <div className=" flex flex-col max-lg:px-4 max-lg:py-0 pl-24 pr-96 mr-16 gap-8 pt-16">
                   <h2 className="text-3xl text-white font-bold">
                     Besoin d'aide ?
                   </h2>

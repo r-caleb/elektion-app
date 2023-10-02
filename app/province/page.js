@@ -23,7 +23,7 @@ export default function Province() {
   console.log(provinces);
 
   return (
-    <section className="w-full bg-gradient-to-t from-[#E1E2E5] to-white-500 px-16">
+    <section className="w-full bg-gradient-to-t from-[#E1E2E5] to-white-500 lg:px-8 xl:px-16 max-lg:px-6 max-sm:px-3">
       <div className="flex my-8">
         <div class="w-full p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
           <div class="flex items-center justify-between mb-4">
@@ -44,7 +44,7 @@ export default function Province() {
                 )
                 ?.map((province) => (
                   <li class="py-3" key={province.id}>
-                     <Link href={`/province/${province.nom}`} key={province.id}>
+                    <Link href={`/province/${province.nom}`} key={province.id}>
                       <div class="flex items-center space-x-4">
                         <p class="text-md font-medium text-gray-900 truncate dark:text-white">
                           {province.nom}

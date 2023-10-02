@@ -41,9 +41,9 @@ export default function News() {
   }, []);
 
   return (
-    <section className="w-full bg-gradient-to-t from-[#E1E2E5] to-white-500 px-16">
+    <section className="w-full bg-gradient-to-t from-[#E1E2E5] to-white-500 lg:px-8 xl:px-16 max-lg:px-6 max-sm:px-3">
       <div className="bg-white p-3 my-3 shadow-md">
-        <div className="flex justify-between items-center mt-8 mb-2 p-2">
+        <div className="flex justify-between max-sm:flex-col max-sm:items-start max-sm:mt-0 items-center mt-8 mb-2 p-2">
           {" "}
           <div>
             <div className="py-[0.5rem] flex ">{infos.length} Articles</div>
@@ -66,7 +66,7 @@ export default function News() {
         </div>
         <hr />
       </div>
-      <div className="grid grid-cols-3 gap-4 my-8">
+      <div className="grid grid-cols-3 max-sm:grid-cols-1 max-md:grid-cols-2 gap-4 my-8">
         {infos
           ?.filter((info) =>
             input

@@ -46,9 +46,9 @@ export default function OneNews() {
  
 
   return (
-    <section className="w-full bg-gradient-to-t from-[#E1E2E5] to-white-500 px-16">
-      <div className="flex items-start py-8 gap-12">
-        <div className="flex flex-col justify-center w-2/3">
+    <section className="w-full bg-gradient-to-t from-[#E1E2E5] to-white-500 lg:px-8 xl:px-16 max-lg:px-6 max-sm:px-3">
+      <div className="flex items-start max-lg:flex-col py-8 gap-12">
+        <div className="flex flex-col justify-center w-2/3 max-lg:w-full">
           <h2 className="font-bold text-2xl">{news[0]?.titre}</h2>
           <p className="flex items-center pt-2 pb-4 text-sm text-[#616972]">
             Publié le :
@@ -122,12 +122,12 @@ export default function OneNews() {
           </div>
           <hr className="border-[#c5c3c3]" />
         </div>
-        <div className="shadow-md p-4 w-1/3 mt-24">
+        <div className="shadow-md p-4 w-1/3 max-lg:w-full mt-24 max-lg:mt-0">
           <h3 className="text-md font-medium py-3">Actualités récentes</h3>
           <hr className="border-[#c5c3c3]" />
           {infos?.map((info) => (
             <Link href={`/news/${info.id}`} key={info.id}>
-              <div className="bg-white overflow-hidden border-b-4 border-blue-500 py-4">
+              <div className="bg-white overflow-hidden border-b-4 border-blue-500 max-sm:my-4 py-4">
                 <img
                   src={`https://elektion.de-vie.com/web/assets/images/ImageArticle/${info?.image}`}
                   alt="People"

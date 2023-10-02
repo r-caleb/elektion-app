@@ -56,9 +56,9 @@ export default function Center() {
   };
 
   return (
-    <section className="w-full bg-gradient-to-t from-[#E1E2E5] to-white-500 px-16">
+    <section className="w-full bg-gradient-to-t from-[#E1E2E5] to-white-500 lg:px-8 xl:px-16 max-lg:px-6 max-sm:px-3">
       <div className="bg-white p-3 my-2 shadow-md">
-        <div className="flex justify-between items-center mt-8 mb-2 p-2">
+        <div className="flex justify-between max-sm:flex-col max-sm:items-start items-center mt-8 mb-2 p-2">
           {" "}
           <div>
             {nomProvince} :<span> {provinceCenter.length} centres</span>
@@ -97,7 +97,7 @@ export default function Center() {
           </div>
         </div>
       </div>
-      <div className="flex flex-wrap gap-4">
+      <div className="flex flex-wrap max-md:flex-col gap-4">
         {communeCenter?.map((center) => (
           <div className="py-[1rem] w-[600px]" key={center.name}>
             <div>

@@ -39,17 +39,17 @@ export default function Candidat() {
     e.preventDefault();
   };
   return (
-    <section className="w-full bg-gradient-to-t from-[#E1E2E5] to-white-500 px-16">
-      <div className="bg-white p-3 my-6 shadow-md">
-        <div className="flex justify-between items-center mt-8 mb-2 p-2">
+    <section className="w-full bg-gradient-to-t from-[#E1E2E5] to-white-500 lg:px-8 xl:px-16 max-lg:px-6 max-sm:px-3">
+      <div className="bg-white p-3 max-sm:p-1 my-6 shadow-md">
+        <div className="flex justify-between max-sm:flex-col-reverse items-center mt-8 mb-2 p-2">
           {" "}
           <div>
-            <div className="py-[0.5rem flex flex-wrap]">
+            <div className="py-[0.5rem] flex flex-wrap]">
               {keywords.map((value, i) => (
                 <span
                   onClick={() => handleClick(value)}
                   key={i}
-                  className={`mr-[1rem] p-[0.5rem] text-sm border border-[#d2d4d8] bg-[#f9fafb] cursor-pointer rounded-md hover:bg-app-gray hover:text-white ${
+                  className={`mr-[1rem] max-sm:mr-[0.4rem] max-sm:p-[0.3rem] p-[0.5rem] text-sm border border-[#d2d4d8] bg-[#f9fafb] cursor-pointer rounded-md hover:bg-app-gray hover:text-white ${
                     activeElement === value ? "active" : ""
                   }`}
                 >
@@ -85,7 +85,7 @@ export default function Candidat() {
           )
           ?.map((candidat) => (
             <Link href={`#`} key={candidat.id}>
-              <div className="row w-[260px]">
+              <div className="row w-[260px] max-sm:w-[290px]">
                 <div className="col-md-3">
                   <div className="card card-product">
                     <div className="card-image">

@@ -9,8 +9,8 @@ import Image from "next/image";
 export default function Footer() {
   const pathname = usePathname();
   return (
-    <div className="bg-[#050B0E] text-white w-full p-16 text-sm">
-      <div className="grid grid-cols-3 gap-4 w-full">
+    <div className="bg-[#050B0E] text-white w-full p-16 max-sm:p-4 text-sm">
+      <div className="grid grid-cols-3 max-sm:flex max-sm:flex-col max-sm:items-start gap-4 w-full">
         <div className="flex flex-col gap-5 ">
           <Image
             src={logo}
@@ -153,7 +153,7 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col max-sm:w-full">
           <h3 className="text-lg pb-2">Souscrivez à notre news letter</h3>
           <form class="w-full" noValidate>
             <div class="flex flex-col items-center">
