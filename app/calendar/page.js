@@ -61,7 +61,7 @@ export default function Calendar() {
           ?.map((calendar) => (
             <div
               key={calendar.id}
-              className={`flex items-center gap-4 max-md:w-full bg-white rounded-lg py-4 ${
+              className={`flex items-center max-md:flex-col gap-4 max-sm:gap-0 max-md:w-full bg-white rounded-lg py-4 ${
                 calendar.date == "2023-12-01" &&
                 calendar.dateFiN == "2023-12-31" &&
                 "border-2 border-red-600"
@@ -75,16 +75,16 @@ export default function Calendar() {
               />
               <div className="p-2">
                 <div className="flex items-center text-sm pb-2 text-app-blue font-bold ">
-                  <span className="mx-1">Du</span>
-                  <Moment locale="fr" format="D MMMM YYYY " withTitle>
+                  <span className="mx-1 ">Du</span>
+                  <Moment locale="fr" format="D MMMM YYYY" withTitle>
                     {calendar.date}
                   </Moment>
                   <span className="mx-1"> au </span>
-                  <Moment locale="fr" format="D MMMM YYYY " withTitle>
+                  <Moment locale="fr" format="D MMMM YYYY" withTitle>
                     {calendar.dateFiN}
                   </Moment>
                 </div>
-                <h3 className="text-lg">{calendar.titre}</h3>
+                <h3 className="text-lg max-sm:text-sm">{calendar.titre}</h3>
               </div>
             </div>
           ))}
