@@ -9,10 +9,11 @@ import candidat from "/public/assets/images/candidat.jpg";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Moment from "react-moment";
+import { useRouter } from "next/navigation";
 
 export default function Accueil() {
   const [infos, setInfo] = useState([]);
-
+  const router = useRouter();
   const fetchData = () => {
     fetch("https://de-vie.com/processus_E_api/api/articles?search=")
       .then((response) => {
@@ -29,6 +30,9 @@ export default function Accueil() {
     fetchData();
   }, []);
   console.log(infos);
+  const handleCalendar = () => {
+    router.push("/calendar");
+  };
   return (
     <main className="flex flex-col justify-between lg:px-8 xl:px-16 max-lg:px-6 max-sm:px-3 my-4">
       <header className="flex items-center justify-between max-sm:flex-col w-full gap-4">
@@ -159,6 +163,7 @@ export default function Accueil() {
               <button
                 className="text-white bg-app-blue p-2 w-28 transform transition duration-500 hover:scale-110 self-end"
                 title="Cliquez pour afficher tout le calendrier"
+                onClick={handleCalendar}
               >
                 Voir plus
               </button>

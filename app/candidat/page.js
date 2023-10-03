@@ -41,15 +41,14 @@ export default function Candidat() {
   return (
     <section className="w-full bg-gradient-to-t from-[#E1E2E5] to-white-500 lg:px-8 xl:px-16 max-lg:px-6 max-sm:px-3">
       <div className="bg-white p-3 max-sm:p-1 my-6 shadow-md">
-        <div className="flex justify-between max-sm:flex-col-reverse items-center mt-8 mb-2 p-2">
-          {" "}
+        <div className="flex justify-between max-md:flex-col-reverse items-center mt-8 mb-2 p-2">
           <div>
-            <div className="py-[0.5rem] flex flex-wrap]">
+            <div className="py-[0.5rem] flex flex-wrap">
               {keywords.map((value, i) => (
                 <span
                   onClick={() => handleClick(value)}
                   key={i}
-                  className={`mr-[1rem] max-sm:mr-[0.4rem] max-sm:p-[0.3rem] p-[0.5rem] text-sm border border-[#d2d4d8] bg-[#f9fafb] cursor-pointer rounded-md hover:bg-app-gray hover:text-white ${
+                  className={`mr-[1rem] my-1 max-sm:mr-[0.4rem] max-sm:p-[0.3rem] p-[0.5rem] text-sm border border-[#d2d4d8] bg-[#f9fafb] cursor-pointer rounded-md hover:bg-app-gray hover:text-white ${
                     activeElement === value ? "active" : ""
                   }`}
                 >
@@ -60,7 +59,7 @@ export default function Candidat() {
           </div>
           <form
             onSubmit={handleSubmit}
-            className="flex items-center h-[50px]  rounded-[8px]"
+            className="flex items-center h-[50px] rounded-[8px]"
           >
             <input
               type="text"
@@ -76,7 +75,7 @@ export default function Candidat() {
         </div>
         <hr />
       </div>
-      <div className="flex gap-12 flex-wrap lg:ml-8">
+      <div className="flex gap-4 xl:ml-6 max-xl:justify-center flex-wrap lg:ml-8">
         {candidates
           ?.filter((candidat) =>
             input
