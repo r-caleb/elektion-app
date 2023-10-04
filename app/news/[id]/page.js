@@ -43,7 +43,6 @@ export default function OneNews() {
     fetchData();
   }, []);
   const news = infos?.filter((info) => info && info.id == id.id);
- 
 
   return (
     <section className="w-full bg-gradient-to-t from-[#E1E2E5] to-white-500 lg:px-8 xl:px-16 max-lg:px-6 max-sm:px-3">
@@ -75,7 +74,7 @@ export default function OneNews() {
             />
           )}
           <p
-            
+            dangerouslySetInnerHTML={{ __html: news[0]?.contenu }}
             className="py-3"
           />
           <hr className="border-[#c5c3c3]" />

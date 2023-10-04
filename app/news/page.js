@@ -96,7 +96,7 @@ export default function News() {
                   <div className="flex items-center gap-2 pt-3">
                     <p>Partager sur :</p>
                     <FacebookShareButton
-                      url={"https://github.com/next-share"}
+                      url={`https://rdc-elektion-app.vercel.app/news/${info.id}`}
                       quote={
                         "next-share is a social share buttons for your next React apps."
                       }
@@ -106,7 +106,7 @@ export default function News() {
                     </FacebookShareButton>
 
                     <WhatsappShareButton
-                      url={"https://github.com/next-share"}
+                      url={`https://rdc-elektion-app.vercel.app/news/${info.id}`}
                       title={
                         "next-share is a social share buttons for your next React apps."
                       }
@@ -115,18 +115,20 @@ export default function News() {
                       <WhatsappIcon size={32} round />
                     </WhatsappShareButton>
                     <TwitterShareButton
-                      url={"https://github.com/next-share"}
+                      url={`https://rdc-elektion-app.vercel.app/news/${info.id}`}
                       title={
                         "next-share is a social share buttons for your next React apps."
                       }
                     >
                       <TwitterIcon size={32} round />
                     </TwitterShareButton>
-                    <LinkedinShareButton url={"https://github.com/next-share"}>
+                    <LinkedinShareButton
+                      url={`https://rdc-elektion-app.vercel.app/news/${info.id}`}
+                    >
                       <LinkedinIcon size={32} round />
                     </LinkedinShareButton>
                     <TelegramShareButton
-                      url={"https://github.com/next-share"}
+                      url={`https://rdc-elektion-app.vercel.app/news/${info.id}`}
                       title={
                         "next-share is a social share buttons for your next React apps."
                       }

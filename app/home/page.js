@@ -37,56 +37,62 @@ export default function Accueil() {
     <main className="flex flex-col justify-between lg:px-8 xl:px-16 max-lg:px-6 max-sm:px-3 my-4">
       <header className="flex items-center justify-between max-sm:flex-col w-full gap-4">
         {
-          <article className="relative isolate flex flex-col justify-end overflow-hidden px-8 pb-8 pt-[350px] max-sm:pt-[230px] w-full">
-            <img
-              src={`https://elektion.de-vie.com/web/assets/images/ImageArticle/${infos[0]?.image}`}
-              alt="University of Southern California"
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
-            <div className="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
-              <Moment locale="fr" format="D MMM YYYY" withTitle>
-                {infos[0]?.date}
-              </Moment>
-            </div>
-            <h3 className="z-10 mt-1 h-14 text-xl font-bold text-white">
-              {infos[0]?.titre}
-            </h3>
-          </article>
+          <Link href={`/news/${infos[0]?.id}`}>
+            <article className="relative isolate flex flex-col justify-end overflow-hidden px-8 pb-8 pt-[350px] max-sm:pt-[230px] w-full">
+              <img
+                src={`https://elektion.de-vie.com/web/assets/images/ImageArticle/${infos[0]?.image}`}
+                alt="University of Southern California"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
+              <div className="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
+                <Moment locale="fr" format="D MMM YYYY" withTitle>
+                  {infos[0]?.date}
+                </Moment>
+              </div>
+              <h3 className="z-10 mt-1 h-14 text-xl font-bold text-white">
+                {infos[0]?.titre}
+              </h3>
+            </article>
+          </Link>
         }
         <div className="w-2/3 max-sm:w-full flex flex-col gap-4">
-          <article className="relative isolate flex flex-col justify-end overflow-hidden px-8 pb-8 pt-[108px] max-sm:pt-[230px] w-full">
-            <img
-              src={`https://elektion.de-vie.com/web/assets/images/ImageArticle/${infos[1]?.image}`}
-              alt="University of Southern California"
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
-            <div className="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
-              <Moment locale="fr" format="D MMM YYYY" withTitle>
-                {infos[1]?.date}
-              </Moment>
-            </div>
-            <h3 className="z-10 mt-1 h-14 text-md font-bold text-white">
-              {infos[1]?.titre}
-            </h3>
-          </article>
-          <article className="relative max-sm:hidden isolate flex flex-col justify-end overflow-hidden px-8 pb-8 pt-[108px] w-full">
-            <img
-              src={`https://elektion.de-vie.com/web/assets/images/ImageArticle/${infos[2]?.image}`}
-              alt="University of Southern California"
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
-            <div className="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
-              <Moment locale="fr" format="D MMM YYYY" withTitle>
-                {infos[2]?.date}
-              </Moment>
-            </div>
-            <h3 className="z-10 mt-1 text-md h-14 font-bold text-white">
-              {infos[2]?.titre}
-            </h3>
-          </article>
+          <Link href={`/news/${infos[1]?.id}`}>
+            <article className="relative isolate flex flex-col justify-end overflow-hidden px-8 pb-8 pt-[108px] max-sm:pt-[230px] w-full">
+              <img
+                src={`https://elektion.de-vie.com/web/assets/images/ImageArticle/${infos[1]?.image}`}
+                alt="University of Southern California"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
+              <div className="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
+                <Moment locale="fr" format="D MMM YYYY" withTitle>
+                  {infos[1]?.date}
+                </Moment>
+              </div>
+              <h3 className="z-10 mt-1 h-14 text-md font-bold text-white">
+                {infos[1]?.titre}
+              </h3>
+            </article>
+          </Link>
+          <Link href={`/news/${infos[2]?.id}`}>
+            <article className="relative max-sm:hidden isolate flex flex-col justify-end overflow-hidden px-8 pb-8 pt-[108px] w-full">
+              <img
+                src={`https://elektion.de-vie.com/web/assets/images/ImageArticle/${infos[2]?.image}`}
+                alt="University of Southern California"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
+              <div className="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
+                <Moment locale="fr" format="D MMM YYYY" withTitle>
+                  {infos[2]?.date}
+                </Moment>
+              </div>
+              <h3 className="z-10 mt-1 text-md h-14 font-bold text-white">
+                {infos[2]?.titre}
+              </h3>
+            </article>
+          </Link>
         </div>
       </header>
       <section className="my-8 w-full">
