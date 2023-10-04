@@ -1,7 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import justice from "/public/assets/images/justice.png";
-import Image from "next/image";
 import { BsStopwatch } from "react-icons/bs";
 import Moment from "react-moment";
 import { AiOutlineSearch } from "react-icons/ai";

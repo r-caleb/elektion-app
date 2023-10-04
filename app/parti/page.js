@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { BsStopwatch } from "react-icons/bs";
+import flag from "/public/assets/images/flag.jpg";
 
 export default function Parti() {
   const [parti, setParti] = useState([]);
@@ -23,6 +24,7 @@ export default function Parti() {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
+  console.log(parti);
 
   return (
     <section className="w-full bg-gradient-to-t from-[#E1E2E5] to-white-500 lg:px-8 xl:px-16 max-lg:px-6 max-sm:px-3">
@@ -59,22 +61,32 @@ export default function Parti() {
                 : true
             )
             ?.map((parti) => (
-              <div className="row w-[260px]">
+              <div className="row w-[260px]" key={parti.id}>
                 <div className="col-md-3">
                   <div className="card card-product">
                     <div className="card-image">
                       <a href="#">
-                        <img
-                          className="img max-w-[230px] max-h-[190px] object-cover"
-                          src={`https://elektion.de-vie.com/web/assets/images/logoParti/${parti.logo}`}
-                        />
+                        {parti.logo ? (
+                          <img
+                            className="img max-w-[230px] max-h-[190px] object-cover"
+                            src={`https://elektion.de-vie.com/web/assets/images/logoParti/${parti.logo}`}
+                          />
+                        ) : (
+                          <Image
+                            src={flag}
+                            alt="flag"
+                            width={500}
+                            className="cover mb-4"
+                          />
+                        )}
                       </a>
                     </div>
                     <div className="table">
-                      <p className="text-lg text-app-blue font-semibold">
-                        {" "}
-                        {parti?.nom}
-                      </p>
+                      <p
+                        className="text-lg text-app-blue font-semibold"
+                        dangerouslySetInnerHTML={{ __html: parti?.nom }}
+                      />
+
                       <p className="text-sm"> {parti.fondateur}</p>
                     </div>
                   </div>

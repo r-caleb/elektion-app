@@ -75,7 +75,7 @@ export default function OneNews() {
             />
           )}
           <p
-            dangerouslySetInnerHTML={{ __html: news[0]?.contenu }}
+            
             className="py-3"
           />
           <hr className="border-[#c5c3c3]" />
