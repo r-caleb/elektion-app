@@ -117,7 +117,7 @@ export default function Candidat() {
                         <p className="text-lg">{candidat?.nom}</p>
                       </h4>
                       <div className="card-description">
-                        Parti Politique :{" "}
+                        Parti:{" "}
                         {candidat?.parti_politique.substring(
                           candidat?.parti_politique.indexOf("|") + 1
                         )}

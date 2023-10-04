@@ -39,7 +39,9 @@ export default function Accueil() {
         {
           <Link href={`/news/${infos[0]?.id}`}>
             <article className="relative isolate flex flex-col justify-end overflow-hidden px-8 pb-8 pt-[350px] max-sm:pt-[230px] w-full">
-              <img
+              <Image
+                width={500}
+                height={500}
                 src={`https://elektion.de-vie.com/web/assets/images/ImageArticle/${infos[0]?.image}`}
                 alt="University of Southern California"
                 className="absolute inset-0 h-full w-full object-cover"
@@ -59,10 +61,12 @@ export default function Accueil() {
         <div className="w-2/3 max-sm:w-full flex flex-col gap-4">
           <Link href={`/news/${infos[1]?.id}`}>
             <article className="relative isolate flex flex-col justify-end overflow-hidden px-8 pb-8 pt-[108px] max-sm:pt-[230px] w-full">
-              <img
+              <Image
                 src={`https://elektion.de-vie.com/web/assets/images/ImageArticle/${infos[1]?.image}`}
                 alt="University of Southern California"
                 className="absolute inset-0 h-full w-full object-cover"
+                width={500}
+                height={500}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
               <div className="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
@@ -70,17 +74,19 @@ export default function Accueil() {
                   {infos[1]?.date}
                 </Moment>
               </div>
-              <h3 className="z-10 mt-1 h-14 text-md font-bold text-white">
+              <h3 className="z-10 mt-1 max-sm:mb-4  h-14 text-md font-bold text-white">
                 {infos[1]?.titre}
               </h3>
             </article>
           </Link>
           <Link href={`/news/${infos[2]?.id}`}>
             <article className="relative max-sm:hidden isolate flex flex-col justify-end overflow-hidden px-8 pb-8 pt-[108px] w-full">
-              <img
+              <Image
                 src={`https://elektion.de-vie.com/web/assets/images/ImageArticle/${infos[2]?.image}`}
                 alt="University of Southern California"
                 className="absolute inset-0 h-full w-full object-cover"
+                width={500}
+                height={500}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
               <div className="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
@@ -88,7 +94,7 @@ export default function Accueil() {
                   {infos[2]?.date}
                 </Moment>
               </div>
-              <h3 className="z-10 mt-1 text-md h-14 font-bold text-white">
+              <h3 className="z-10 mt-1 max-sm:mb-4 text-md h-14 font-bold text-white">
                 {infos[2]?.titre}
               </h3>
             </article>
@@ -111,7 +117,7 @@ export default function Accueil() {
               <p className="text-sm pb-2 text-app-blue font-bold ">
                 Du 1 décembre 2023 Au 31 décembre 2023
               </p>
-              <h3 className="text-lg">
+              <h3 className="text-md">
                 Votes combinés du Président de la République, des députés
                 nationaux, des députés provinciaux et des conseillers de
                 commune, de secteur et de chefferie
@@ -127,12 +133,13 @@ export default function Accueil() {
                 />
                 <div>
                   <p className="text-xs pb-2 text-app-blue font-bold ">
-                    Du 1 décembre 2023 Au 31 décembre 2023
+                    Du 1 décembre, 2023 Au 31 mars, 2024
                   </p>
                   <h3 className="text-sm">
-                    Votes combinés du Président de la République, des députés
-                    nationaux, des députés provinciaux et des conseillers de
-                    commune, de secteur et de chefferie
+                    Ramassage, agrégation et annonce des résultats provisoires
+                    des scrutins, contentieux des résultats électoraux et
+                    publication de résultats définitifs et cooptation des chefs
+                    coutumiers aux assemblées provinciales
                   </h3>
                 </div>
               </div>
@@ -146,9 +153,11 @@ export default function Accueil() {
                 />
                 <div>
                   <p className="text-xs pb-2 text-app-blue font-bold ">
-                    Du 1 novembre, 2023 Au 31 décembre, 2023
+                    Du 1 janvier, 2024 Au 31 janvier, 2024
                   </p>
-                  <h3 className="text-sm">Campagne électorale</h3>
+                  <h3 className="text-sm">
+                    Plaidoyer et lobbying auprès des autres institutions
+                  </h3>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -160,11 +169,13 @@ export default function Accueil() {
                 />
                 <div>
                   <p className="text-xs pb-2 text-app-blue font-bold ">
-                    Du 1 juillet, 2023 Au 31 août, 2023
+                    Du 1 janvier, 2024 Au 31 janvier, 2024
                   </p>
                   <h3 className="text-sm">
-                    Repérage des centres de vote et bureaux de vote et
-                    dépouillement
+                    Cadres de concertation sur l'organisation des scrutins
+                    indirects des sénateurs et des conseillers urbains, des
+                    gouverneurs, des bourgmestres et chefs de secteur ainsi que
+                    des mairies
                   </h3>
                 </div>
               </div>
