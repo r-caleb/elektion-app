@@ -73,16 +73,18 @@ export default function Accueil() {
           </article>
           <article className="relative max-sm:hidden isolate flex flex-col justify-end overflow-hidden px-8 pb-8 pt-[108px] w-full">
             <img
-              src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a"
+              src={`https://elektion.de-vie.com/web/assets/images/ImageArticle/${infos[2]?.image}`}
               alt="University of Southern California"
               className="absolute inset-0 h-full w-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
             <div className="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
-              Ceni - 25 Septembre 2023
+              <Moment locale="fr" format="D MMM YYYY" withTitle>
+                {infos[2]?.date}
+              </Moment>
             </div>
             <h3 className="z-10 mt-1 text-md h-14 font-bold text-white">
-              Exclu – Présidentielle : Diongo annoncé mercredi 27 à la CENI
+              {infos[2]?.titre}
             </h3>
           </article>
         </div>

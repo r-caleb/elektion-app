@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import logo from "/public/assets/images/logos/logo.png";
 import Link from "next/link";
 import Image from "next/image";
@@ -9,6 +9,10 @@ import { AiOutlineCloseSquare } from "react-icons/ai";
 export default function SideBar({ sidebar, handleToggleSidebar }) {
   const pathname = usePathname();
   const [value, setValue] = useState("fr");
+  const router = useRouter();
+  const handleHome = () => {
+    router.push("/home");
+  };
 
   return (
     <>
@@ -35,6 +39,7 @@ export default function SideBar({ sidebar, handleToggleSidebar }) {
               alt="logo"
               width={180}
               className="my-1 mx-4 object-cover h-auto"
+              onClick={handleHome}
             />
 
             <AiOutlineCloseSquare

@@ -15,10 +15,15 @@ import playstore from "/public/assets/images/googleplay.png";
 import appstore from "/public/assets/images/appstore.png";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
-export default function Header({  handleToggleSidebar }) {
+export default function Header({ handleToggleSidebar }) {
   const pathname = usePathname();
+  const router = useRouter();
+
+  const handleHome = () => {
+    router.push("/home");
+  };
 
   return (
     <div className=" flex flex-col w-full gap-1 bg-white">
@@ -39,7 +44,8 @@ export default function Header({  handleToggleSidebar }) {
             Breaking News
           </span>
           <span className="max-lg:hidden">
-            Indonesia says located black box recorders from crashed plane
+            La CENI lance un appel d’offres international pour l’acquisition des
+            kits d’enrôlement des électeurs
           </span>
         </div>
         <div className="flex items-center gap-2 max-lg:py-3 ">
@@ -62,6 +68,7 @@ export default function Header({  handleToggleSidebar }) {
           width={230}
           height={40}
           className="cover"
+          onClick={handleHome}
         />
         <div className="bg-black max-lg:w-full lg:w-5/6 xl:w-4/6 ">
           <div className="bg-home bg-cover opacity-70 bg-center w-full p-4 flex max-lg:flex-col justify-between items-center">

@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import logo from "/public/assets/images/logos/logo-white.png";
@@ -8,6 +8,10 @@ import Image from "next/image";
 
 export default function Footer() {
   const pathname = usePathname();
+  const router = useRouter();
+  const handleHome = () => {
+    router.push("/home");
+  };
   return (
     <div className="bg-[#050B0E] text-white w-full p-16 max-sm:p-4 text-sm">
       <div className="grid grid-cols-3 max-sm:flex max-sm:flex-col max-sm:items-start gap-4 w-full">
@@ -18,6 +22,7 @@ export default function Footer() {
             width={230}
             height={40}
             className="cover"
+            onClick={handleHome}
           />
 
           <p>
