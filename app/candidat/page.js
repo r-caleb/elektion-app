@@ -1,8 +1,10 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { BsStopwatch } from "react-icons/bs";
+import homme from "/public/assets/images/homme.png";
 
 const keywords = [
   "Tout",
@@ -38,6 +40,7 @@ export default function Candidat() {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
+  console.log(candidates);
   return (
     <section className="w-full bg-gradient-to-t from-[#E1E2E5] to-white-500 lg:px-8 xl:px-16 max-lg:px-6 max-sm:px-3">
       <div className="bg-white p-3 max-sm:p-1 my-6 shadow-md">
@@ -88,22 +91,34 @@ export default function Candidat() {
                 <div className="col-md-3">
                   <div className="card card-product">
                     <div className="card-image">
-                      <img
-                        className="img max-w-[230px] max-h-[230px] object-cover"
-                        src={`https://elektion.de-vie.com/web/assets/images/PhotoCandidats/${candidat.photoCandidat}`}
-                      />
+                      {candidat.photoCandidat ? (
+                        <img
+                          className="img max-w-[230px] max-h-[230px] object-cover"
+                          src={`https://elektion.de-vie.com/web/assets/images/PhotoCandidats/${candidat.photoCandidat}`}
+                        />
+                      ) : (
+                        <Image
+                          src={homme}
+                          alt="flag"
+                          width={500}
+                          className="cover mb-4"
+                        />
+                      )}
                     </div>
                     <div className="table">
-                      <h6 className="category text-rose">
+                      <h6 className="category text-rose text-center">
+                        {" "}
                         {`${candidat.scrutin.replace("Legislatif", "Député")} `}
-                        <span>N°{candidat.numeroCandidat}</span>
                       </h6>
+                      <div className="text-center font-medium">
+                        <span>N°{candidat.numeroCandidat}</span>
+                      </div>
                       <h4 className="card-caption">
                         <p className="text-lg">{candidat?.nom}</p>
                       </h4>
-                      <div className="card-description">
+                      {/* <div className="card-description">
                         Parti Politique : UDPS
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
