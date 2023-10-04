@@ -97,28 +97,22 @@ export default function News() {
                     <p>Partager sur :</p>
                     <FacebookShareButton
                       url={`https://rdc-elektion-app.vercel.app/news/${info.id}`}
-                      quote={
-                        "next-share is a social share buttons for your next React apps."
-                      }
-                      hashtag={"#nextshare"}
+                      quote={info.titre}
+                      hashtag={"election"}
                     >
                       <FacebookIcon size={32} round />
                     </FacebookShareButton>
 
                     <WhatsappShareButton
                       url={`https://rdc-elektion-app.vercel.app/news/${info.id}`}
-                      title={
-                        "next-share is a social share buttons for your next React apps."
-                      }
+                      title={info.titre}
                       separator=":: "
                     >
                       <WhatsappIcon size={32} round />
                     </WhatsappShareButton>
                     <TwitterShareButton
                       url={`https://rdc-elektion-app.vercel.app/news/${info.id}`}
-                      title={
-                        "next-share is a social share buttons for your next React apps."
-                      }
+                      title={info.titre}
                     >
                       <TwitterIcon size={32} round />
                     </TwitterShareButton>
@@ -129,9 +123,7 @@ export default function News() {
                     </LinkedinShareButton>
                     <TelegramShareButton
                       url={`https://rdc-elektion-app.vercel.app/news/${info.id}`}
-                      title={
-                        "next-share is a social share buttons for your next React apps."
-                      }
+                      title={info.titre}
                     >
                       <TelegramIcon size={32} round />
                     </TelegramShareButton>
