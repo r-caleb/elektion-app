@@ -16,6 +16,8 @@ import appstore from "/public/assets/images/appstore.png";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import Moment from "react-moment";
+import "moment/locale/fr";
 
 export default function Header({ handleToggleSidebar }) {
   const pathname = usePathname();
@@ -35,10 +37,11 @@ export default function Header({ handleToggleSidebar }) {
             onClick={() => handleToggleSidebar()}
           />
           <div className="flex items-center gap-1 max-md:hidden">
-            <PiSunHorizon size={15} /> <span>15°C New York</span>
+            <PiSunHorizon size={15} /> <span>33°C Kinshasa</span>
           </div>
           <div className="flex items-center gap-1 ">
-            <BsStopwatch size={15} /> <span>Wednesday, 10 January 2021</span>{" "}
+            <BsStopwatch size={15} />{" "}
+            <Moment locale="fr" format="D MMM YYYY" withTitle />
           </div>
           <span className="p-2 bg-app-blue text-white max-lg:hidden">
             Breaking News

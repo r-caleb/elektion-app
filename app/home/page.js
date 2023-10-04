@@ -10,6 +10,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import Moment from "react-moment";
 import { useRouter } from "next/navigation";
+import "moment/locale/fr";
+
 
 export default function Accueil() {
   const [infos, setInfo] = useState([]);
@@ -23,6 +25,7 @@ export default function Accueil() {
         setInfo(data.artiData);
       });
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -48,7 +51,7 @@ export default function Accueil() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
               <div className="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
-                <Moment locale="fr" format="D MMM YYYY" withTitle>
+                <Moment locale="fr" format="D MMMM YYYY" withTitle>
                   {infos[0]?.date}
                 </Moment>
               </div>
@@ -70,7 +73,7 @@ export default function Accueil() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
               <div className="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
-                <Moment locale="fr" format="D MMM YYYY" withTitle>
+                <Moment locale="fr" format="D MMMM YYYY" withTitle>
                   {infos[1]?.date}
                 </Moment>
               </div>
@@ -90,7 +93,7 @@ export default function Accueil() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
               <div className="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
-                <Moment locale="fr" format="D MMM YYYY" withTitle>
+                <Moment locale="fr" format="D MMMM YYYY" withTitle>
                   {infos[2]?.date}
                 </Moment>
               </div>
