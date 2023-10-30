@@ -21,7 +21,7 @@ export default function Footer() {
             alt="logo "
             width={230}
             height={40}
-            className="cover"
+            className="cover cursor-pointer"
             onClick={handleHome}
           />
 

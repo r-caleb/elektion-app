@@ -97,14 +97,14 @@ export default function Center() {
           </div>
         </div>
       </div>
-      <div className="flex flex-wrap max-md:flex-col gap-4">
+      <div className="flex flex-wrap max-md:flex-col items-start gap-4">
         {communeCenter?.map((center) => (
           <div className="py-[1rem] w-[600px]" key={center.name}>
             <div>
               <div className="bg-app-blue text-[#f5f6fa] w-[10rem] p-[0.5rem] rounded-t-md ">
                 {center.name}
               </div>
-              <div className="flex flex-col shadow-sm bg-white p-[0.6rem]">
+              <div className="flex flex-col shadow-xl bg-white p-[0.6rem]">
                 {center.values.map((item) => (
                   <div className="flex p-[1rem] justify-between">
                     <div>

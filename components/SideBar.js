@@ -38,7 +38,7 @@ export default function SideBar({ sidebar, handleToggleSidebar }) {
               src={logo}
               alt="logo"
               width={180}
-              className="my-1 mx-4 object-cover h-auto"
+              className="my-1 mx-4 object-cover h-auto cursor-pointer"
               onClick={handleHome}
             />
 

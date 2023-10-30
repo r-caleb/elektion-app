@@ -70,7 +70,7 @@ export default function Header({ handleToggleSidebar }) {
           alt="logo "
           width={230}
           height={40}
-          className="cover"
+          className="cover cursor-pointer"
           onClick={handleHome}
         />
         <div className="bg-black max-lg:w-full lg:w-5/6 xl:w-4/6 ">
@@ -165,7 +165,7 @@ export default function Header({ handleToggleSidebar }) {
                       pathname === "/candidat" ? " border-b-2 " : ""
                     }}`}
                   >
-                    Candidat
+                    Candidats
                   </span>
                 </div>
               </Link>
@@ -184,7 +184,7 @@ export default function Header({ handleToggleSidebar }) {
                       pathname === "/parti" ? " border-b-2 " : ""
                     }}`}
                   >
-                    Parti Politique
+                    Partis Politiques
                   </span>
                 </div>
               </Link>
@@ -203,7 +203,7 @@ export default function Header({ handleToggleSidebar }) {
                       pathname === "/province" ? " border-b-2 " : ""
                     }}`}
                   >
-                    Centre
+                    Centres
                   </span>
                 </div>
               </Link>
