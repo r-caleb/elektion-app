@@ -104,7 +104,7 @@ export default function SideBar({ sidebar, handleToggleSidebar }) {
                     pathname === "/candidat" ? " border-b-2 " : ""
                   }}`}
                 >
-                  Candidat
+                  Candidats
                 </span>
               </div>
             </Link>
@@ -123,7 +123,7 @@ export default function SideBar({ sidebar, handleToggleSidebar }) {
                     pathname === "/parti" ? " border-b-2 " : ""
                   }}`}
                 >
-                  Parti Politique
+                  Partis Politiques
                 </span>
               </div>
             </Link>
@@ -142,7 +142,7 @@ export default function SideBar({ sidebar, handleToggleSidebar }) {
                     pathname === "/province" ? " border-b-2 " : ""
                   }}`}
                 >
-                  Centre
+                  Centres
                 </span>
               </div>
             </Link>
