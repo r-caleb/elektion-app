@@ -17,12 +17,12 @@ export default function SideBar({ sidebar, handleToggleSidebar }) {
   return (
     <>
       <div
-        onClick={() => handleToggleSidebar(false)}
         className={`elektion_md:hidden bg-[rgba(0,0,0,0.5)] fixed top-0 z-[45] w-screen h-full overlfow-hidden  ${
           sidebar
             ? "max-elektion_md:flex transition ease-in duration-300"
             : "max-elektion_md:hidden"
         }`}
+        onClick={() => handleToggleSidebar(false)}
       ></div>
       <nav
         className={`border-r text-app-dark-green overflow-hidden w-[14rem] max-elektion_md:w-[20rem]  bg-white elektion_md:hidden  fixed max-elektion_md:top-0  h-full z-[45]

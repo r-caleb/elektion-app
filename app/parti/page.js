@@ -63,7 +63,7 @@ export default function Parti() {
             ?.map((parti) => (
               <div className="row w-[260px]" key={parti.id}>
                 <div className="col-md-3">
-                  <div className="card card-product">
+                  <div className="card card1 card-product">
                     <div className="card-image">
                       <a href="#">
                         {parti.logo ? (
