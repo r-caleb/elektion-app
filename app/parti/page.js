@@ -67,16 +67,18 @@ export default function Parti() {
                     <div className="card-image">
                       <a href="#">
                         {parti.logo ? (
-                          <img
-                            className="img max-w-[230px] max-h-[190px] object-cover"
+                          <Image
+                            className="img max-w-[230px] max-h-[180px] object-cover"
                             src={`https://elektion.de-vie.com/web/assets/images/logoParti/${parti.logo}`}
+                            width={500}
+                            height={500}
                           />
                         ) : (
                           <Image
                             src={flag}
                             alt="flag"
                             width={500}
-                            className="cover mb-4"
+                            className="cover "
                           />
                         )}
                       </a>
