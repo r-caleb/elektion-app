@@ -633,6 +633,11 @@ postcss@8.4.30, postcss@^8.4.23:
     picocolors "^1.0.0"
     source-map-js "^1.0.2"
 
+pspdfkit@^2023.5.3:
+  version "2023.5.3"
+  resolved "https://registry.yarnpkg.com/pspdfkit/-/pspdfkit-2023.5.3.tgz#b547023adb4770d78a1f525aa374618728df0bfd"
+  integrity sha512-pFamaMRza0zfFPS47y88VDJbaTTEQKxMOrwJmgERPhzXngkNqkMGv0qBclY0UVoHdGsNrN1qdfoyj3ZMez6hDA==
+
 queue-microtask@^1.2.2:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/queue-microtask/-/queue-microtask-1.2.3.tgz#4929228bbc724dfac43e0efb058caf7b6cfb6243"
