@@ -92,16 +92,18 @@ export default function Candidat() {
                   <div className="card card-product">
                     <div className="card-image">
                       {candidat.photoCandidat ? (
-                        <img
-                          className="img max-w-[230px] max-h-[230px] object-cover"
+                        <Image
+                          className="img max-h-[230px] object-cover cover"
                           src={`https://elektion.de-vie.com/web/assets/images/PhotoCandidats/${candidat.photoCandidat}`}
+                          width={500}
+                          height={500}
                         />
                       ) : (
                         <Image
                           src={homme}
                           alt="flag"
                           width={500}
-                          className="cover mb-4"
+                          className="cover"
                         />
                       )}
                     </div>
