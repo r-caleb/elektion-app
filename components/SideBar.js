@@ -58,7 +58,7 @@ export default function SideBar({ sidebar, handleToggleSidebar }) {
                 className={
                   pathname === "/home"
                     ? "active flex p-2 lg:p-4"
-                    : "flex p-2 lg:p-4 hover:bg-[#393939]"
+                    : "flex p-2 lg:p-4 hover:bg-[#393939] hover:text-white"
                 }
               >
                 <span
@@ -77,7 +77,7 @@ export default function SideBar({ sidebar, handleToggleSidebar }) {
                 className={
                   pathname === "/news"
                     ? "active flex p-2 lg:p-4"
-                    : "flex p-2 lg:p-4 hover:bg-[#393939]"
+                    : "flex p-2 lg:p-4 hover:bg-[#393939] hover:text-white"
                 }
               >
                 <span
@@ -96,7 +96,7 @@ export default function SideBar({ sidebar, handleToggleSidebar }) {
                 className={
                   pathname === "/candidat"
                     ? "active flex p-2 lg:p-4"
-                    : "flex p-2 lg:p-4 hover:bg-[#393939]"
+                    : "flex p-2 lg:p-4 hover:bg-[#393939] hover:text-white"
                 }
               >
                 <span
@@ -115,7 +115,7 @@ export default function SideBar({ sidebar, handleToggleSidebar }) {
                 className={
                   pathname === "/parti"
                     ? "active flex p-2 lg:p-4"
-                    : "flex p-2 lg:p-4 hover:bg-[#393939]"
+                    : "flex p-2 lg:p-4 hover:bg-[#393939] hover:text-white"
                 }
               >
                 <span
@@ -134,7 +134,7 @@ export default function SideBar({ sidebar, handleToggleSidebar }) {
                 className={
                   pathname === "/province"
                     ? "active flex p-2 lg:p-4"
-                    : "flex p-2 lg:p-4 hover:bg-[#393939]"
+                    : "flex p-2 lg:p-4 hover:bg-[#393939] hover:text-white"
                 }
               >
                 <span
@@ -153,7 +153,7 @@ export default function SideBar({ sidebar, handleToggleSidebar }) {
                 className={
                   pathname === "/legal-text"
                     ? "active flex p-2 lg:p-4"
-                    : "flex p-2 lg:p-4 hover:bg-[#393939]"
+                    : "flex p-2 lg:p-4 hover:bg-[#393939] hover:text-white"
                 }
               >
                 <span
@@ -172,7 +172,7 @@ export default function SideBar({ sidebar, handleToggleSidebar }) {
                 className={
                   pathname === "/calendar"
                     ? "active flex p-2 lg:p-4"
-                    : "flex p-2 lg:p-4 hover:bg-[#393939]"
+                    : "flex p-2 lg:p-4 hover:bg-[#393939] hover:text-white"
                 }
               >
                 <span
@@ -191,7 +191,7 @@ export default function SideBar({ sidebar, handleToggleSidebar }) {
                 className={
                   pathname === "/contact_us"
                     ? "active flex p-2 lg:p-4"
-                    : "flex p-2 lg:p-4 hover:bg-[#393939]"
+                    : "flex p-2 lg:p-4 hover:bg-[#393939] hover:text-white"
                 }
               >
                 <span
