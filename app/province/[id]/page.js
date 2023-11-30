@@ -30,7 +30,7 @@ export default function Center() {
     (center) => center.province === nomProvince
   );
   const provinceCenter = centerProvince.filter((center) =>
-    activeElement !== "Selectionner un district"
+    activeElement !== "Selectionner une circonscription"
       ? center.circonscription === activeElement
       : true
   );
@@ -38,7 +38,7 @@ export default function Center() {
     setActiveElement(e.target.value);
   };
   const categoryAll = centerProvince.map((center) => center.circonscription);
-  var categories = [...new Set(categoryAll)];
+  let categories = [...new Set(categoryAll)];
   const groupObjectByField = (items, field) => {
     const outputs = {};
     items.forEach((item) => {
@@ -50,7 +50,9 @@ export default function Center() {
     });
     return Object.values(outputs);
   };
+  console.log("categ", categories);
   const communeCenter = groupObjectByField(provinceCenter, "territoire");
+  console.log("commune", communeCenter);
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -86,8 +88,9 @@ export default function Center() {
             <select
               id="circonscriptions"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              onChange={handleSelect}
             >
-              <option selected>Selectionner un district</option>
+              <option selected>Selectionner une circonscription</option>
               {categories.map((center) => (
                 <option value={center} key={center}>
                   {center}
