@@ -7,7 +7,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 
 export default function Center() {
   const [activeElement, setActiveElement] = useState(
-    "Selectionner un district"
+    "Selectionner une circonscription"
   );
   const [centers, setCenter] = useState([]);
   const [input, setInput] = useState("");
@@ -87,7 +87,7 @@ export default function Center() {
           <div>
             <select
               id="circonscriptions"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               onChange={handleSelect}
             >
               <option selected>Selectionner une circonscription</option>
@@ -102,9 +102,9 @@ export default function Center() {
       </div>
       <div className="flex flex-wrap max-md:flex-col items-start gap-4">
         {communeCenter?.map((center) => (
-          <div className="py-[1rem] w-[600px]" key={center.name}>
+          <div className="py-[1rem] sm:w-[600px]" key={center.name}>
             <div>
-              <div className="bg-app-blue text-[#f5f6fa] w-[10rem] p-[0.5rem] rounded-t-md ">
+              <div className="bg-app-blue font-bold text-[#f5f6fa] sm:w-[10rem] p-[0.5rem] rounded-t-md ">
                 {center.name}
               </div>
               <div className="flex flex-col shadow-xl bg-white p-[0.6rem]">
