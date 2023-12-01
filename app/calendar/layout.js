@@ -1,7 +1,7 @@
 "use client";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
-import SideBar from "@/components/SideBar";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
+import SideBar from "../../components/SideBar";
 import React, { useState } from "react";
 
 export default function layout({ children }) {
