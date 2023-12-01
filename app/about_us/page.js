@@ -11,12 +11,12 @@ export default function About() {
           A-propos de nous
         </h3>
       </div>
-      
+
       <OnlineCourse />
       <WhyChooseUs />
       <OtherCourses />
       <div className="my-4 mx-auto">
-        <h2>Pour nous contactez, laissez votre message...</h2>
+        <h2 id="contact">Pour nous contactez, laissez votre message...</h2>
         <div className="flex items-center w-full justify-center">
           <div className="mx-auto w-2/5 max-md:w-4/5">
             <form>

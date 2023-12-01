@@ -266,7 +266,7 @@ export default function Accueil() {
                     laissez un avis
                   </h6>
                   <a
-                    href="/contact_us"
+                    href="/about_us#contact"
                     className="text-[14px] bg-transparent border hover:text-black border-white rounded-sm py-4 px-8 w-[180px] hover:bg-white  text-white transform transition duration-500 hover:scale-110"
                   >
                     Contactez-nous
