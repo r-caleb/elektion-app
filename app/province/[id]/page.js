@@ -51,7 +51,7 @@ export default function Center() {
     return Object.values(outputs);
   };
   console.log("categ", categories);
-  const communeCenter = groupObjectByField(provinceCenter, "territoire");
+  const communeCenter = groupObjectByField(provinceCenter, "circonscription");
   console.log("commune", communeCenter);
   const handleSubmit = (e) => {
     e.preventDefault();
