@@ -1,8 +1,8 @@
 "use client";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
-import SideBar from "@/components/SideBar";
+import SideBar from "../../components/SideBar";
 import React, { useState } from "react";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
 
 export default function layout({ children }) {
   const [sidebar, toggleSidebar] = useState(false);
@@ -16,5 +16,3 @@ export default function layout({ children }) {
     </>
   );
 }
-
-

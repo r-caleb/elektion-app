@@ -186,20 +186,20 @@ export default function SideBar({ sidebar, handleToggleSidebar }) {
             </Link>
           </li>
           <li onClick={() => handleToggleSidebar(false)}>
-            <Link href="/contact_us">
+            <Link href="/about_us">
               <div
                 className={
-                  pathname === "/contact_us"
+                  pathname === "/about_us"
                     ? "active flex p-2 lg:p-4"
                     : "flex p-2 lg:p-4 hover:bg-[#393939] hover:text-white"
                 }
               >
                 <span
                   className={`text-[14px] ${
-                    pathname === "/contact_us" ? " border-b-2 " : ""
+                    pathname === "/about_us" ? " border-b-2 " : ""
                   }}`}
                 >
-                  Contactez-nous
+                  A-propos
                 </span>
               </div>
             </Link>
