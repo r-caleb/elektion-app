@@ -110,7 +110,11 @@ export default function Candidat() {
                     <div className="table">
                       <h6 className="category text-rose text-center">
                         {" "}
-                        {`${candidat.scrutin.replace("Legislatif", "Député")} `}
+                        {`${
+                          candidat.scrutin == "Presidentielle"
+                            ? "Presidentiel"
+                            : candidat.scrutin.replace("Legislatif", "Député")
+                        } `}
                       </h6>
                       <div className="text-center font-medium">
                         <span>N°{candidat.numeroCandidat}</span>
