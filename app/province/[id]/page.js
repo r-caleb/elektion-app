@@ -104,8 +104,8 @@ export default function Center() {
         {communeCenter?.map((center) => (
           <div className="py-[1rem] sm:w-[600px]" key={center.name}>
             <div>
-              <div className="bg-app-blue font-bold text-[#f5f6fa] sm:w-[10rem] p-[0.5rem] rounded-t-md ">
-                {center.name}
+              <div className="bg-app-blue font-bold text-[#f5f6fa] sm:w-[15rem] p-[0.5rem] rounded-t-md ">
+                 {center.name} 
               </div>
               <div className="flex flex-col shadow-xl bg-white p-[0.6rem]">
                 {center.values.map((item) => (
