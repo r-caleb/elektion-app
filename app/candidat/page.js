@@ -55,7 +55,7 @@ export default function Candidat() {
                     activeElement === value ? "active" : ""
                   }`}
                 >
-                  {value}
+                  {value == "Presidentielle" ? "Presidentiel" : value}
                 </span>
               ))}
             </div>
