@@ -43,7 +43,7 @@ export default function OneNews() {
     fetchData();
   }, []);
   const news = infos?.filter((info) => info && info.id == id.id);
-
+  console.log(news);
   return (
     <section className="w-full bg-gradient-to-t from-[#E1E2E5] to-white-500 lg:px-8 xl:px-16 max-lg:px-6 max-sm:px-3">
       <div className="flex items-start max-lg:flex-col py-8 gap-12">
@@ -81,7 +81,7 @@ export default function OneNews() {
           <div className="flex items-center gap-2 py-3">
             <p>Partager sur :</p>
             <FacebookShareButton
-              url={"https://github.com/next-share"}
+              url={`https://rdc-elektion-app.vercel.app/news/${news[0]?.id}`}
               quote={
                 "next-share is a social share buttons for your next React apps."
               }
@@ -91,7 +91,7 @@ export default function OneNews() {
             </FacebookShareButton>
 
             <WhatsappShareButton
-              url={"https://github.com/next-share"}
+              url={`https://rdc-elektion-app.vercel.app/news/${news[0]?.id}`}
               title={
                 "next-share is a social share buttons for your next React apps."
               }
@@ -100,18 +100,20 @@ export default function OneNews() {
               <WhatsappIcon size={32} round />
             </WhatsappShareButton>
             <TwitterShareButton
-              url={"https://github.com/next-share"}
+              url={`https://rdc-elektion-app.vercel.app/news/${news[0]?.id}`}
               title={
                 "next-share is a social share buttons for your next React apps."
               }
             >
               <TwitterIcon size={32} round />
             </TwitterShareButton>
-            <LinkedinShareButton url={"https://github.com/next-share"}>
+            <LinkedinShareButton
+              url={`https://rdc-elektion-app.vercel.app/news/${news[0]?.id}`}
+            >
               <LinkedinIcon size={32} round />
             </LinkedinShareButton>
             <TelegramShareButton
-              url={"https://github.com/next-share"}
+              url={`https://rdc-elektion-app.vercel.app/news/${news[0]?.id}`}
               title={
                 "next-share is a social share buttons for your next React apps."
               }
@@ -149,40 +151,34 @@ export default function OneNews() {
                   <div className="flex items-center gap-2 pt-3">
                     <p>Partager sur :</p>
                     <FacebookShareButton
-                      url={"https://github.com/next-share"}
-                      quote={
-                        "next-share is a social share buttons for your next React apps."
-                      }
-                      hashtag={"#nextshare"}
+                      url={`https://rdc-elektion-app.vercel.app/news/${info.id}`}
+                      quote={info.titre}
+                      hashtag={"election"}
                     >
                       <FacebookIcon size={32} round />
                     </FacebookShareButton>
 
                     <WhatsappShareButton
-                      url={"https://github.com/next-share"}
-                      title={
-                        "next-share is a social share buttons for your next React apps."
-                      }
+                      url={`https://rdc-elektion-app.vercel.app/news/${info.id}`}
+                      title={info.titre}
                       separator=":: "
                     >
                       <WhatsappIcon size={32} round />
                     </WhatsappShareButton>
                     <TwitterShareButton
-                      url={"https://github.com/next-share"}
-                      title={
-                        "next-share is a social share buttons for your next React apps."
-                      }
+                      url={`https://rdc-elektion-app.vercel.app/news/${info.id}`}
+                      title={info.titre}
                     >
                       <TwitterIcon size={32} round />
                     </TwitterShareButton>
-                    <LinkedinShareButton url={"https://github.com/next-share"}>
+                    <LinkedinShareButton
+                      url={`https://rdc-elektion-app.vercel.app/news/${info.id}`}
+                    >
                       <LinkedinIcon size={32} round />
                     </LinkedinShareButton>
                     <TelegramShareButton
-                      url={"https://github.com/next-share"}
-                      title={
-                        "next-share is a social share buttons for your next React apps."
-                      }
+                      url={`https://rdc-elektion-app.vercel.app/news/${info.id}`}
+                      title={info.titre}
                     >
                       <TelegramIcon size={32} round />
                     </TelegramShareButton>
