@@ -9,8 +9,7 @@ import homme from "/public/assets/images/homme.png";
 const keywords = [
   "Tout",
   "Presidentielle",
-  "Legislatif National",
-  "Legislatif Provincial",
+  "Legislatif National"
 ];
 
 export default function Candidat() {

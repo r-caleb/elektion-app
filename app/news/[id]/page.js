@@ -64,6 +64,16 @@ export default function OneNews() {
               {news[0]?.date}
             </Moment>
           </p>
+          <Link
+            href={`${news[0]?.lien}`}
+            className="z-10 gap-y-1 pb-2 overflow-hidden text-sm leading-"
+          >
+            <span>Source</span>
+            <span>{`: ${news[0]?.lien?.substring(
+              news[0]?.lien.indexOf("/", 7) + 1,
+              news[0]?.lien.indexOf("/", 8)
+            )}`}</span>
+          </Link>
           {news && (
             <Image
               src={`https://elektion.de-vie.com/web/assets/images/ImageArticle/${news[0]?.image}`}

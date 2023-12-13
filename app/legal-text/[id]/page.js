@@ -7,7 +7,6 @@ import { AiOutlineSearch } from "react-icons/ai";
 export default function PDFViewer() {
   const containerRef = useRef(null);
   const id = useParams();
-  console.log(id);
   let file;
   if (id.id == "LOI%20ELECTORALE%20N%C2%B022-029%20DU%2029%20JUIN%202022") {
     file = "LOI ELECTORALE N°22-029 DU 29 JUIN 2022";

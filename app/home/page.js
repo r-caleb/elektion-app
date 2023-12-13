@@ -12,7 +12,6 @@ import Moment from "react-moment";
 import { useRouter } from "next/navigation";
 import "moment/locale/fr";
 
-
 export default function Accueil() {
   const [infos, setInfo] = useState([]);
   const router = useRouter();
@@ -36,6 +35,10 @@ export default function Accueil() {
   const handleCalendar = () => {
     router.push("/calendar");
   };
+  let source = infos[0]?.lien?.substring(
+    infos[0]?.lien.indexOf("/", 7) + 1,
+    infos[0]?.lien.indexOf("/", 8)
+  );
   return (
     <main className="flex flex-col justify-between lg:px-8 xl:px-16 max-lg:px-6 max-sm:px-3 my-4">
       <header className="flex items-center justify-between max-sm:flex-col w-full gap-4">
@@ -58,12 +61,22 @@ export default function Accueil() {
               <h3 className="z-10 mt-1 h-14 text-xl font-bold text-white">
                 {infos[0]?.titre}
               </h3>
+              <Link
+                href={`${infos[0]?.lien}`}
+                className="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300"
+              >
+                <span>Source</span>
+                <span>{`: ${infos[0]?.lien?.substring(
+                  infos[0]?.lien.indexOf("/", 7) + 1,
+                  infos[0]?.lien.indexOf("/", 8)
+                )}`}</span>
+              </Link>
             </article>
           </Link>
         }
         <div className="w-2/3 max-sm:w-full flex flex-col gap-4">
           <Link href={`/news/${infos[1]?.id}`}>
-            <article className="relative isolate flex flex-col justify-end overflow-hidden px-8 pb-8 pt-[108px] max-sm:pt-[230px] w-full">
+            <article className="relative isolate flex flex-col justify-end overflow-hidden px-8 pb-8 pt-[90px] max-sm:pt-[230px] w-full">
               <Image
                 src={`https://elektion.de-vie.com/web/assets/images/ImageArticle/${infos[1]?.image}`}
                 alt="University of Southern California"
@@ -80,10 +93,20 @@ export default function Accueil() {
               <h3 className="z-10 mt-1 max-sm:mb-4  h-14 text-md font-bold text-white">
                 {infos[1]?.titre}
               </h3>
+              <Link
+                href={`${infos[1]?.lien}`}
+                className="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300"
+              >
+                <span>Source</span>
+                <span>{`: ${infos[1]?.lien?.substring(
+                  infos[1]?.lien.indexOf("/", 7) + 1,
+                  infos[1]?.lien.indexOf("/", 8)
+                )}`}</span>
+              </Link>
             </article>
           </Link>
           <Link href={`/news/${infos[2]?.id}`}>
-            <article className="relative max-sm:hidden isolate flex flex-col justify-end overflow-hidden px-8 pb-8 pt-[108px] w-full">
+            <article className="relative max-sm:hidden isolate flex flex-col justify-end overflow-hidden px-8 pb-8 pt-[90px] w-full">
               <Image
                 src={`https://elektion.de-vie.com/web/assets/images/ImageArticle/${infos[2]?.image}`}
                 alt="University of Southern California"
@@ -97,9 +120,19 @@ export default function Accueil() {
                   {infos[2]?.date}
                 </Moment>
               </div>
-              <h3 className="z-10 mt-1 max-sm:mb-4 text-md h-14 font-bold text-white">
+              <h3 className="z-10 mt-1 max-sm:mb-4 text-md h-18 font-bold text-white">
                 {infos[2]?.titre}
               </h3>
+              <Link
+                href={`${infos[0]?.lien}`}
+                className="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300"
+              >
+                <span>Source</span>
+                <span>{`: ${infos[2]?.lien?.substring(
+                  infos[2]?.lien.indexOf("/", 7) + 1,
+                  infos[2]?.lien.indexOf("/", 8)
+                )}`}</span>
+              </Link>
             </article>
           </Link>
         </div>

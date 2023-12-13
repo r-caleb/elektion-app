@@ -93,6 +93,16 @@ export default function News() {
                       {info.date}
                     </Moment>
                   </div>
+                  <Link
+                    href={`${info?.lien}`}
+                    className="z-10 gap-y-1 overflow-hidden text-xs leading-"
+                  >
+                    <span>Source</span>
+                    <span>{`: ${info?.lien?.substring(
+                      info?.lien.indexOf("/", 7) + 1,
+                      info?.lien.indexOf("/", 8)
+                    )}`}</span>
+                  </Link>
                   <div className="flex items-center gap-2 pt-3">
                     <p>Partager sur :</p>
                     <FacebookShareButton
