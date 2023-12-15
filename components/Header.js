@@ -260,7 +260,7 @@ export default function Header({ handleToggleSidebar }) {
                       pathname === "/about_us" ? " border-b-2 " : ""
                     }}`}
                   >
-                    A-propos
+                    A propos
                   </span>
                 </div>
               </Link>

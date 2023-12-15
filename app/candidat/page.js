@@ -6,14 +6,10 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { BsStopwatch } from "react-icons/bs";
 import homme from "/public/assets/images/homme.png";
 
-const keywords = [
-  "Tout",
-  "Presidentielle",
-  "Legislatif National"
-];
+const keywords = ["Presidentielle", "Legislatif National"];
 
 export default function Candidat() {
-  const [activeElement, setActiveElement] = useState("Tout");
+  const [activeElement, setActiveElement] = useState("Presidentielle");
   const [candidats, setCandidat] = useState([]);
   const [input, setInput] = useState("");
   const fetchData = () => {
@@ -54,7 +50,9 @@ export default function Candidat() {
                     activeElement === value ? "active" : ""
                   }`}
                 >
-                  {value == "Presidentielle" ? "Presidentiel" : value}
+                  {value == "Presidentielle"
+                    ? "Présidentielle"
+                    : "Législative nationale"}
                 </span>
               ))}
             </div>
@@ -111,7 +109,7 @@ export default function Candidat() {
                         {" "}
                         {`${
                           candidat.scrutin == "Presidentielle"
-                            ? "Presidentiel"
+                            ? "Candidat Président"
                             : candidat.scrutin.replace("Legislatif", "Député")
                         } `}
                       </h6>
@@ -121,11 +119,16 @@ export default function Candidat() {
                       <h4 className="card-caption">
                         <p className="text-lg">{candidat?.nom}</p>
                       </h4>
+                      
                       <div className="card-description">
-                        Parti:{" "}
                         {candidat?.parti_politique.substring(
                           candidat?.parti_politique.indexOf("|") + 1
                         )}
+                        {candidat.scrutin == "Legislatif National" && (
+                        <div className="text-center font-medium">
+                          <span>{candidat.circonscription}</span>
+                        </div>
+                      )}
                       </div>
                     </div>
                   </div>
