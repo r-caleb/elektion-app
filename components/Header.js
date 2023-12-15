@@ -73,16 +73,11 @@ export default function Header({ handleToggleSidebar }) {
           className="cover cursor-pointer"
           onClick={handleHome}
         />
-        <div className="bg-black max-lg:w-full lg:w-5/6 xl:w-4/6 ">
-          <div className="bg-home bg-cover opacity-70 bg-center w-full p-4 flex max-lg:flex-col justify-between items-center">
-            <div>
-              <p className="text-white font-bold  text-lg">
-                Ensemble rétablissons la confiance aux électeurs !
-              </p>
-              <p className="text-white font-bold text-elektion_md py-2">
-                La transparence du processus électoral est notre goal
-              </p>
-            </div>
+        <div className="text-app-blue text-2xl font-bold">
+          Election dans 5 jours : 9 heures : 10 min{" "}
+        </div>
+        <div className="bg-black max-lg:w-full lg:w-3/6 xl:w-2/6 ">
+          <div className="bg-home bg-cover opacity-80 bg-center w-full p-4 flex max-lg:flex-col justify-between items-center">
             <div>
               <p className="text-white font-bold">
                 Télécharger notre application mobile🤗
