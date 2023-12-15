@@ -39,7 +39,11 @@ export default function Candidat() {
   return (
     <section className="w-full bg-gradient-to-t from-[#E1E2E5] to-white-500 lg:px-8 xl:px-16 max-lg:px-6 max-sm:px-3">
       <div className="bg-white p-3 max-sm:p-1 my-6 shadow-md">
-        <div className="flex justify-between max-md:flex-col-reverse items-center mt-8 mb-2 p-2">
+        <p className="text-app-blue p-2 text-xl">
+          Liste des candidats à l'élection présidentielle et à la législative
+          nationale
+        </p>
+        <div className="flex justify-between max-md:flex-col-reverse items-center mt-1 mb-2 p-2">
           <div>
             <div className="py-[0.5rem] flex flex-wrap">
               {keywords.map((value, i) => (
@@ -119,16 +123,16 @@ export default function Candidat() {
                       <h4 className="card-caption">
                         <p className="text-lg">{candidat?.nom}</p>
                       </h4>
-                      
+
                       <div className="card-description">
                         {candidat?.parti_politique.substring(
                           candidat?.parti_politique.indexOf("|") + 1
                         )}
                         {candidat.scrutin == "Legislatif National" && (
-                        <div className="text-center font-medium">
-                          <span>{candidat.circonscription}</span>
-                        </div>
-                      )}
+                          <div className="text-center font-medium">
+                            <span>{candidat.circonscription}</span>
+                          </div>
+                        )}
                       </div>
                     </div>
                   </div>

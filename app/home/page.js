@@ -76,7 +76,7 @@ export default function Accueil() {
         }
         <div className="w-2/3 max-sm:w-full flex flex-col gap-4">
           <Link href={`/news/${infos[1]?.id}`}>
-            <article className="relative isolate flex flex-col justify-end overflow-hidden px-8 pb-8 pt-[90px] max-sm:pt-[230px] w-full">
+            <article className="relative isolate flex flex-col justify-end overflow-hidden px-8 pb-8 pt-[100px] max-sm:pt-[230px] w-full">
               <Image
                 src={`https://elektion.de-vie.com/web/assets/images/ImageArticle/${infos[1]?.image}`}
                 alt="University of Southern California"
@@ -106,7 +106,7 @@ export default function Accueil() {
             </article>
           </Link>
           <Link href={`/news/${infos[2]?.id}`}>
-            <article className="relative max-sm:hidden isolate flex flex-col justify-end overflow-hidden px-8 pb-8 pt-[90px] w-full">
+            <article className="relative max-sm:hidden isolate flex flex-col justify-end overflow-hidden px-8 pb-8 pt-[100px] w-full">
               <Image
                 src={`https://elektion.de-vie.com/web/assets/images/ImageArticle/${infos[2]?.image}`}
                 alt="University of Southern California"

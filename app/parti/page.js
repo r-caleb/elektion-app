@@ -29,7 +29,10 @@ export default function Parti() {
   return (
     <section className="w-full bg-gradient-to-t from-[#E1E2E5] to-white-500 lg:px-8 xl:px-16 max-lg:px-6 max-sm:px-3">
       <div className="bg-white p-3 my-4 shadow-md">
-        <div className="flex justify-between max-md:flex-col items-center mt-8 mb-2 p-2">
+        <p className="text-app-blue p-2 text-xl">
+          Liste des partis politiques
+        </p>
+        <div className="flex justify-between max-md:flex-col-reverse items-center mt-1 mb-2 p-2">
           <div>
             <span className="text-app-blue font-bold"> {parti.length} </span>
             Partis Politiques
