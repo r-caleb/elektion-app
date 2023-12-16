@@ -4,6 +4,7 @@ import React from "react";
 import { PiSunHorizon } from "react-icons/pi";
 import { BsStopwatch } from "react-icons/bs";
 import {
+  FaArrowAltCircleUp,
   FaBars,
   FaFacebook,
   FaInstagram,
@@ -18,6 +19,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import Moment from "react-moment";
 import "moment/locale/fr";
+import MyTimer from "./MyTimer";
 
 export default function Header({ handleToggleSidebar }) {
   const pathname = usePathname();
@@ -26,9 +28,13 @@ export default function Header({ handleToggleSidebar }) {
   const handleHome = () => {
     router.push("/home");
   };
-
+  const seconds = 600;
+  const timeStamp = new Date(
+    "Wed Dec 20 2023 06:00:00 GMT+0100 (heure normale d’Afrique de l’Ouest)"
+  );
+  console.log(timeStamp);
   return (
-    <div className=" flex flex-col w-full gap-1 bg-white">
+    <div className=" flex flex-col w-full gap-1 bg-white" id="start">
       <div className="w-full flex items-center justify-between text-xs lg:px-8 xl:px-16 max-lg:px-6 max-sm:px-3 shadow-app">
         <div className="w-full flex items-center bg-white gap-4">
           <FaBars
@@ -47,8 +53,8 @@ export default function Header({ handleToggleSidebar }) {
             Breaking News
           </span>
           <span className="max-lg:hidden">
-            La CENI lance un appel d’offres international pour l’acquisition des
-            kits d’enrôlement des électeurs
+            Élections du 20 décembre 2023 : Réception par la CENI des documents
+            sensibles des bureaux de vote
           </span>
         </div>
         <div className="flex items-center gap-2 max-lg:py-3 ">
@@ -64,7 +70,7 @@ export default function Header({ handleToggleSidebar }) {
           </div>
         </div>
       </div>
-      <div className="w-full flex items-center max-sm:flex-col max-sm:items-start justify-between bg-white max-xl:gap-4 lg:px-8 xl:px-16 max-lg:px-6 max-sm:px-3 py-1">
+      <div className="w-full h-full flex items-center max-sm:flex-col max-sm:items-start justify-between bg-white max-xl:gap-4 lg:px-8 xl:px-16 max-lg:px-6 max-sm:px-3 py-1">
         <Image
           src={logo}
           alt="logo "
@@ -73,8 +79,8 @@ export default function Header({ handleToggleSidebar }) {
           className="cover cursor-pointer"
           onClick={handleHome}
         />
-        <div className="text-app-blue text-2xl font-bold">
-          Election dans 5 jours : 9 heures : 10 min{" "}
+        <div className="text-xl font-bold h-full">
+          <MyTimer expiryTimestamp={timeStamp} />
         </div>
         <div className="bg-black max-lg:w-full lg:w-3/6 xl:w-2/6 ">
           <div className="bg-home bg-cover opacity-80 bg-center w-full p-4 flex max-lg:flex-col justify-between items-center">
@@ -263,6 +269,12 @@ export default function Header({ handleToggleSidebar }) {
           </ul>
         </nav>
       </div>
+      <Link
+        href={"#start"}
+        className="bottom-5 right-2 fixed bg-app-blue text-white p-1 transform transition duration-500 hover:scale-110 cursor-pointer"
+      >
+        <FaArrowAltCircleUp size={25} />
+      </Link>
     </div>
   );
 }

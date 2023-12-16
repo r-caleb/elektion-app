@@ -11,9 +11,11 @@ import { useEffect, useState } from "react";
 import Moment from "react-moment";
 import { useRouter } from "next/navigation";
 import "moment/locale/fr";
+import SkeletonCard from "../../components/SkeletonCard";
 
 export default function Accueil() {
   const [infos, setInfo] = useState([]);
+  const [loading, setLoading] = useState(true);
   const router = useRouter();
   const fetchData = () => {
     fetch("https://de-vie.com/processus_E_api/api/articles?search=")
@@ -30,7 +32,10 @@ export default function Accueil() {
   };
   useEffect(() => {
     fetchData();
-  }, []);
+    if (infos) {
+      setLoading(false);
+    }
+  }, [infos]);
   console.log(infos);
   const handleCalendar = () => {
     router.push("/calendar");
@@ -39,17 +44,27 @@ export default function Accueil() {
     infos[0]?.lien.indexOf("/", 7) + 1,
     infos[0]?.lien.indexOf("/", 8)
   );
+  let skeletonCards = Array(3).fill(0);
+
   return (
     <main className="flex flex-col justify-between lg:px-8 xl:px-16 max-lg:px-6 max-sm:px-3 my-4">
       <header className="flex items-center justify-between max-sm:flex-col w-full gap-4">
-        {
+        {loading ? (
+          <div className="flex w-full flex-col items-center ">
+            <div className="w-[700px] animate-pulse flex-row items-center justify-center space-x-1 rounded-md border p-1 ">
+              <div className="flex flex-col space-y-2">
+                <div className="h-[475px]  rounded-md bg-gray-300"></div>
+                <div className="h-6 rounded-md bg-gray-300 "></div>
+              </div>
+            </div>
+          </div>
+        ) : (
           <Link href={`/news/${infos[0]?.id}`}>
             <article className="relative isolate flex flex-col justify-end overflow-hidden px-8 pb-8 pt-[350px] max-sm:pt-[230px] w-full">
               <Image
                 width={500}
                 height={500}
                 src={`https://elektion.de-vie.com/web/assets/images/ImageArticle/${infos[0]?.image}`}
-                alt="University of Southern California"
                 className="absolute inset-0 h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
@@ -59,82 +74,109 @@ export default function Accueil() {
                 </Moment>
               </div>
               <h3 className="z-10 mt-1 h-14 text-xl font-bold text-white">
-                {infos[0]?.titre}
+                {infos && infos[0]?.titre}
               </h3>
               <Link
                 href={`${infos[0]?.lien}`}
                 className="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300"
               >
                 <span>Source</span>
-                <span>{`: ${infos[0]?.lien?.substring(
-                  infos[0]?.lien.indexOf("/", 7) + 1,
-                  infos[0]?.lien.indexOf("/", 8)
-                )}`}</span>
+                <span>
+                  {infos &&
+                    `: ${infos[0]?.lien?.substring(
+                      infos[0]?.lien.indexOf("/", 7) + 1,
+                      infos[0]?.lien.indexOf("/", 8)
+                    )}`}
+                </span>
               </Link>
             </article>
           </Link>
-        }
+        )}
         <div className="w-2/3 max-sm:w-full flex flex-col gap-4">
-          <Link href={`/news/${infos[1]?.id}`}>
-            <article className="relative isolate flex flex-col justify-end overflow-hidden px-8 pb-8 pt-[100px] max-sm:pt-[230px] w-full">
-              <Image
-                src={`https://elektion.de-vie.com/web/assets/images/ImageArticle/${infos[1]?.image}`}
-                alt="University of Southern California"
-                className="absolute inset-0 h-full w-full object-cover"
-                width={500}
-                height={500}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
-              <div className="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
-                <Moment locale="fr" format="D MMMM YYYY" withTitle>
-                  {infos[1]?.date}
-                </Moment>
+          {loading ? (
+            <div className="flex w-full flex-col items-center ">
+              <div className="w-[500px] animate-pulse flex-row items-center justify-center space-x-1 rounded-md border p-1 ">
+                <div className="flex flex-col space-y-2">
+                  <div className="h-[240px]  rounded-md bg-gray-300"></div>
+                </div>
               </div>
-              <h3 className="z-10 mt-1 max-sm:mb-4  h-14 text-md font-bold text-white">
-                {infos[1]?.titre}
-              </h3>
-              <Link
-                href={`${infos[1]?.lien}`}
-                className="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300"
-              >
-                <span>Source</span>
-                <span>{`: ${infos[1]?.lien?.substring(
-                  infos[1]?.lien.indexOf("/", 7) + 1,
-                  infos[1]?.lien.indexOf("/", 8)
-                )}`}</span>
-              </Link>
-            </article>
-          </Link>
-          <Link href={`/news/${infos[2]?.id}`}>
-            <article className="relative max-sm:hidden isolate flex flex-col justify-end overflow-hidden px-8 pb-8 pt-[100px] w-full">
-              <Image
-                src={`https://elektion.de-vie.com/web/assets/images/ImageArticle/${infos[2]?.image}`}
-                alt="University of Southern California"
-                className="absolute inset-0 h-full w-full object-cover"
-                width={500}
-                height={500}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
-              <div className="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
-                <Moment locale="fr" format="D MMMM YYYY" withTitle>
-                  {infos[2]?.date}
-                </Moment>
+            </div>
+          ) : (
+            <Link href={`/news/${infos[1]?.id}`}>
+              <article className="relative isolate flex flex-col justify-end overflow-hidden px-8 pb-8 pt-[100px] max-sm:pt-[230px] w-full">
+                <Image
+                  src={`https://elektion.de-vie.com/web/assets/images/ImageArticle/${infos[1]?.image}`}
+                  className="absolute inset-0 h-full w-full object-cover"
+                  width={500}
+                  height={500}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
+                <div className="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
+                  <Moment locale="fr" format="D MMMM YYYY" withTitle>
+                    {infos[1]?.date}
+                  </Moment>
+                </div>
+                <h3 className="z-10 mt-1 max-sm:mb-4  h-14 text-md font-bold text-white">
+                  {infos && infos[1]?.titre}
+                </h3>
+                <Link
+                  href={`${infos[1]?.lien}`}
+                  className="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300"
+                >
+                  <span>Source</span>
+                  <span>
+                    {infos &&
+                      `: ${infos[1]?.lien?.substring(
+                        infos[1]?.lien.indexOf("/", 7) + 1,
+                        infos[1]?.lien.indexOf("/", 8)
+                      )}`}
+                  </span>
+                </Link>
+              </article>
+            </Link>
+          )}
+          {loading ? (
+            <div className="flex w-full flex-col items-center ">
+              <div className="w-[500px] animate-pulse flex-row items-center justify-center space-x-1 rounded-md border p-1 ">
+                <div className="flex flex-col space-y-2">
+                  <div className="h-[240px]  rounded-md bg-gray-300"></div>
+                </div>
               </div>
-              <h3 className="z-10 mt-1 max-sm:mb-4 text-md h-18 font-bold text-white">
-                {infos[2]?.titre}
-              </h3>
-              <Link
-                href={`${infos[0]?.lien}`}
-                className="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300"
-              >
-                <span>Source</span>
-                <span>{`: ${infos[2]?.lien?.substring(
-                  infos[2]?.lien.indexOf("/", 7) + 1,
-                  infos[2]?.lien.indexOf("/", 8)
-                )}`}</span>
-              </Link>
-            </article>
-          </Link>
+            </div>
+          ) : (
+            <Link href={`/news/${infos[2]?.id}`}>
+              <article className="relative max-sm:hidden isolate flex flex-col justify-end overflow-hidden px-8 pb-8 pt-[100px] w-full">
+                <Image
+                  src={`https://elektion.de-vie.com/web/assets/images/ImageArticle/${infos[2]?.image}`}
+                  className="absolute inset-0 h-full w-full object-cover"
+                  width={500}
+                  height={500}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
+                <div className="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
+                  <Moment locale="fr" format="D MMMM YYYY" withTitle>
+                    {infos[2]?.date}
+                  </Moment>
+                </div>
+                <h3 className="z-10 mt-1 max-sm:mb-4 text-md h-18 font-bold text-white">
+                  {infos && infos[2]?.titre}
+                </h3>
+                <Link
+                  href={`${infos[0]?.lien}`}
+                  className="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300"
+                >
+                  <span>Source</span>
+                  <span>
+                    {infos &&
+                      `: ${infos[2]?.lien?.substring(
+                        infos[2]?.lien.indexOf("/", 7) + 1,
+                        infos[2]?.lien.indexOf("/", 8)
+                      )}`}
+                  </span>
+                </Link>
+              </article>
+            </Link>
+          )}
         </div>
       </header>
       <section className="my-8 w-full">

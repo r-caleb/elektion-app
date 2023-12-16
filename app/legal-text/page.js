@@ -2,6 +2,8 @@ import React from "react";
 import justice from "/public/assets/images/justice.png";
 import Image from "next/image";
 import Link from "next/link";
+import SkeletonCard from "../../components/SkeletonCard";
+
 
 export default function Legal() {
   return (
