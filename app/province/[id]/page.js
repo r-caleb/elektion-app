@@ -10,6 +10,7 @@ export default function Center() {
     "Selectionner une circonscription"
   );
   const [centers, setCenter] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [input, setInput] = useState("");
   const id = useParams();
   let nomProvince = id.id;
@@ -25,6 +26,9 @@ export default function Center() {
   console.log(input);
   useEffect(() => {
     fetchData();
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
   }, [input]);
   const centerProvince = centers.filter(
     (center) => center.province === nomProvince
@@ -56,6 +60,7 @@ export default function Center() {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
+  let skeletonCards = Array(10).fill(0);
 
   return (
     <section className="w-full bg-gradient-to-t from-[#E1E2E5] to-white-500 lg:px-8 xl:px-16 max-lg:px-6 max-sm:px-3">
@@ -101,27 +106,37 @@ export default function Center() {
         </div>
       </div>
       <div className="flex flex-wrap max-md:flex-col items-start gap-4">
-        {communeCenter?.map((center) => (
-          <div className="py-[1rem] sm:w-[600px]" key={center.name}>
-            <div>
-              <div className="bg-app-blue font-bold text-[#f5f6fa] sm:w-[15rem] p-[0.5rem] rounded-t-md ">
-                 {center.name} 
-              </div>
-              <div className="flex flex-col shadow-xl bg-white p-[0.6rem]">
-                {center.values.map((item) => (
-                  <div className="flex p-[1rem] justify-between">
-                    <div>
-                      <strong>{item.nomCentre}</strong>
-                    </div>
-                    {/* 
-                    <div>{item.NbrDesBureaux} bureaux de votes</div> */}
-                    <div>{item.adresse}</div>
+        {loading
+          ? skeletonCards.map((index) => (
+              <div className="flex w-full flex-1 flex-col items-center">
+                <div className="mt-12 w-[500px] animate-pulse flex-row items-center justify-center space-x-1 rounded-xl border p-6 ">
+                  <div className="flex flex-col space-y-2">
+                    <div className="h-[300px] rounded-md bg-gray-300 "></div>
                   </div>
-                ))}
+                </div>
               </div>
-            </div>
-          </div>
-        ))}
+            ))
+          : communeCenter?.map((center) => (
+              <div className="py-[1rem] sm:w-[600px]" key={center.name}>
+                <div>
+                  <div className="bg-app-blue font-bold text-[#f5f6fa] sm:w-[15rem] p-[0.5rem] rounded-t-md ">
+                    {center.name}
+                  </div>
+                  <div className="flex flex-col shadow-xl bg-white p-[0.6rem]">
+                    {center.values.map((item) => (
+                      <div className="flex p-[1rem] justify-between">
+                        <div>
+                          <strong>{item.nomCentre}</strong>
+                        </div>
+                        {/* 
+                    <div>{item.NbrDesBureaux} bureaux de votes</div> */}
+                        <div>{item.adresse}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
       </div>
     </section>
   );

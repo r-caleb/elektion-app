@@ -33,7 +33,9 @@ export default function Accueil() {
   useEffect(() => {
     fetchData();
     if (infos) {
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 3000);
     }
   }, [infos]);
   console.log(infos);
@@ -44,7 +46,6 @@ export default function Accueil() {
     infos[0]?.lien.indexOf("/", 7) + 1,
     infos[0]?.lien.indexOf("/", 8)
   );
-  let skeletonCards = Array(3).fill(0);
 
   return (
     <main className="flex flex-col justify-between lg:px-8 xl:px-16 max-lg:px-6 max-sm:px-3 my-4">

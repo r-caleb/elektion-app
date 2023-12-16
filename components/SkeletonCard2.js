@@ -1,4 +1,4 @@
-export default function SkeletonCard2({width}) {
+export default function SkeletonCard2() {
   return (
     <div className="flex w-full flex-1 flex-col items-center">
       <div className="mt-12 w-[250px] animate-pulse flex-row items-center justify-center rounded-xl border p-2 ">
@@ -7,6 +7,6 @@ export default function SkeletonCard2({width}) {
           <div className="h-6 rounded-md bg-gray-300 "></div>
         </div>
       </div>
-    </div> 
+    </div>
   );
 }

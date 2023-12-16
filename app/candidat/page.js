@@ -29,9 +29,11 @@ export default function Candidat() {
   useEffect(() => {
     fetchData();
     if (candidats) {
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 3000);
     }
-  }, []);
+  }, [candidats]);
   const handleClick = (value) => {
     setActiveElement(value);
   };
@@ -88,7 +90,16 @@ export default function Candidat() {
       </div>
       <div className="flex gap-4 xl:ml-6 max-xl:justify-center flex-wrap lg:ml-8">
         {loading
-          ? skeletonCards.map((index) => <SkeletonCard key={index} />)
+          ? skeletonCards.map((index) => (
+              <div className="flex w-full flex-1 flex-col items-center">
+                <div className="mt-12 w-[250px] animate-pulse flex-row items-center justify-center rounded-xl border p-2 ">
+                  <div className="flex flex-col space-y-2">
+                    <div className="h-[300px] rounded-md bg-gray-300 "></div>
+                    <div className="h-6 rounded-md bg-gray-300 "></div>
+                  </div>
+                </div>
+              </div>
+            ))
           : candidates
               ?.filter((candidat) =>
                 input

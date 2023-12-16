@@ -23,7 +23,9 @@ export default function Parti() {
   useEffect(() => {
     fetchData();
     if (parti) {
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 3000);
     }
   }, [parti]);
 
@@ -31,7 +33,7 @@ export default function Parti() {
     e.preventDefault();
   };
   console.log(parti);
-  let skeletonCards = Array(8).fill(0);
+  let skeletonCards = Array(10).fill(0);
 
   return (
     <section className="w-full bg-gradient-to-t from-[#E1E2E5] to-white-500 lg:px-8 xl:px-16 max-lg:px-6 max-sm:px-3">
@@ -62,7 +64,16 @@ export default function Parti() {
       </div>
       <div className="flex gap-4 xl:ml-6 max-xl:justify-center flex-wrap lg:ml-8">
         {loading
-          ? skeletonCards.map((index) => <SkeletonCard key={index} />)
+          ? skeletonCards.map((index) => (
+              <div className="flex w-full flex-1 flex-col items-center">
+                <div className="mt-12 w-[250px] animate-pulse flex-row items-center justify-center rounded-xl border p-2 ">
+                  <div className="flex flex-col space-y-2">
+                    <div className="h-[300px] rounded-md bg-gray-300 "></div>
+                    <div className="h-6 rounded-md bg-gray-300 "></div>
+                  </div>
+                </div>
+              </div>
+            ))
           : parti &&
             parti
               .filter((parti) =>

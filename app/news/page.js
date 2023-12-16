@@ -19,13 +19,10 @@ import Link from "next/link";
 import "moment/locale/fr";
 import SkeletonCard from "../../components/SkeletonCard";
 
-
-
 export default function News() {
   const [input, setInput] = useState("");
   const [infos, setInfo] = useState([]);
   const [loading, setLoading] = useState(true);
-
 
   const fetchData = () => {
     fetch("https://de-vie.com/processus_E_api/api/articles?search=")
@@ -42,12 +39,14 @@ export default function News() {
   useEffect(() => {
     fetchData();
     if (infos) {
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 4000);
     }
   }, [infos]);
 
-  let skeletonCards = Array(9).fill(0);
-
+  let skeletonCards = Array(6).fill(0);
+  console.log("l", loading);
   return (
     <section className="w-full bg-gradient-to-t from-[#E1E2E5] to-white-500 lg:px-8 xl:px-16 max-lg:px-6 max-sm:px-3">
       <div className="bg-white p-3 my-3 shadow-md">
@@ -76,7 +75,16 @@ export default function News() {
       </div>
       <div className="grid grid-cols-3 max-sm:grid-cols-1 max-md:grid-cols-2 gap-4 my-8">
         {loading
-          ? skeletonCards.map((index) => <SkeletonCard key={index} />)
+          ? skeletonCards.map((index) => (
+              <div className="flex w-full flex-1 flex-col items-center  px-20">
+                <div className="mt-12 w-[400px] animate-pulse flex-row items-center justify-center space-x-1 rounded-xl border p-6 ">
+                  <div className="flex flex-col space-y-2">
+                    <div className="h-[300px] rounded-md bg-gray-300 "></div>
+                    <div className="h-6 rounded-md bg-gray-300 "></div>
+                  </div>
+                </div>
+              </div>
+            ))
           : infos
               ?.filter((info) =>
                 input
