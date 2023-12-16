@@ -82,7 +82,7 @@ export default function Header({ handleToggleSidebar }) {
         <div className="text-xl font-bold h-full">
           <MyTimer expiryTimestamp={timeStamp} />
         </div>
-        <div className="bg-black max-lg:w-full lg:w-3/6 xl:w-2/6 ">
+        <div className="bg-black max-lg:w-full lg:w-2/6 ">
           <div className="bg-home bg-cover opacity-80 bg-center w-full p-4 flex max-lg:flex-col justify-between items-center">
             <div>
               <p className="text-white font-bold">

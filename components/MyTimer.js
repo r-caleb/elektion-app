@@ -19,9 +19,9 @@ export default function MyTimer({ expiryTimestamp }) {
   });
 
   return (
-    <div className="bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-sky-400 to-indigo-900 text-white h-full p-6">
+    <div className="bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-sky-400 to-indigo-900 text-white h-full p-6 max-xl:p-2 max-lg:hidden">
       Élections dans :
-      <div className="w-[480px]">
+      <div className="max-xl:w-3/4 xl:w-[480px]">
         <span>{` ${String(days).padStart(2, "0")} jours`}</span>:
         <span>{` ${String(hours).padStart(2, "0")} heures`}</span>:
         <span>{` ${String(minutes).padStart(2, "0")} minutes`}</span>:
